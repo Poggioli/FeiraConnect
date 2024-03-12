@@ -1,18 +1,25 @@
+import { Input } from "@/components/ui/input";
+import { Popover, PopoverAnchor, PopoverContent } from "@/components/ui/popover";
+import { SearchIcon } from "lucide-react";
 import { FC } from "react";
 import { IndexSearchBarProps } from "./types";
 import { useIndexSearchBar } from "./useIndexSearchBar";
-import { Input } from "@/components/ui/input";
-import { SearchIcon } from "lucide-react";
 
 export const IndexSearchBar: FC<IndexSearchBarProps> = () => {
 
-  const hook = useIndexSearchBar();
-  console.log({ hook })
+  const { open, setOpen, searchTerm, handleChange, handleOnFocus } = useIndexSearchBar();
 
   return (
-    <div className="relative w-full max-w-screen-sm">
-      <Input className="pr-8" placeholder="Pesquise a cidade da feira" type="autocomplete" />
-      <SearchIcon className="w-5 h-5 absolute right-2 top-2" />
-    </div>
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverAnchor className="w-full">
+        <div className="relative w-full max-w-screen-sm">
+          <Input onChange={handleChange} onFocus={handleOnFocus} value={searchTerm} className="pr-8" placeholder="Pesquise a cidade da feira" type="autocomplete" />
+          <SearchIcon className="w-5 h-5 absolute right-2 top-2" />
+        </div>
+      </PopoverAnchor>
+      <PopoverContent className="p-4">
+        Buscando
+      </PopoverContent>
+    </Popover>
   );
 };
