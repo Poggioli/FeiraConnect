@@ -1,1 +1,1 @@
-export * from '/searchCityByName'
+export * from './searchCityByName'

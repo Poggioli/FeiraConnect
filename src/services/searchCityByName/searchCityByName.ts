@@ -1,28 +1,39 @@
-import { InfiniteData, UndefinedInitialDataInfiniteOptions, useInfiniteQuery } from "@tanstack/react-query";
 import { DEFAULT_PER_PAGE, api } from "@/services/api";
-import { SearchCityByName, SearchCityByNameParams, SearchCityByNameResponse } from "./types";
+import { InfiniteData, useInfiniteQuery } from "@tanstack/react-query";
+import { AxiosError, AxiosRequestConfig } from "axios";
 import qs from "qs";
-import { AxiosError } from "axios";
 import { useMemo } from "react";
+import {
+  SearchCityByName,
+  SearchCityByNameParams,
+  SearchCityByNameResponse,
+  UseSearchCityByNameOptions,
+} from "./types";
 
-async function fetchSearchCityByName({ page, perPage, query }: SearchCityByNameParams): Promise<SearchCityByNameResponse> {
-  const params = qs.stringify({ q: query, page, perPage })
-  const res = await api.get<SearchCityByNameResponse>(`citys-by-name?${params}`);
+async function fetchSearchCityByName(
+  { page, perPage, query }: SearchCityByNameParams,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  config: AxiosRequestConfig<any> | undefined = {}
+): Promise<SearchCityByNameResponse> {
+  const params = qs.stringify({ q: query, page, perPage });
+  const res = await api.get<SearchCityByNameResponse>(
+    `citys-by-name?${params}`,
+    config
+  );
   return res.data;
 }
 
-const queryKey = "searchCityByName" as const
+const queryKey = "searchCityByName" as const;
+
+export function createUseSearchCityByNameQueryKey(
+  query: string
+): ["searchCityByName", { query: string }] {
+  return [queryKey, { query }];
+}
 
 export function useSearchCityByName(
   { query }: Pick<SearchCityByNameParams, "query">,
-  options?:
-    UndefinedInitialDataInfiniteOptions<
-      SearchCityByNameResponse,
-      AxiosError,
-      InfiniteData<SearchCityByNameResponse>,
-      ["searchCityByName", Pick<SearchCityByNameParams, "query">],
-      number
-    >
+  options?: UseSearchCityByNameOptions
 ) {
   const result = useInfiniteQuery<
     SearchCityByNameResponse,
@@ -32,14 +43,36 @@ export function useSearchCityByName(
     number
   >({
     ...options,
-    queryKey: [queryKey, { query }],
+    queryKey: createUseSearchCityByNameQueryKey(query),
     initialPageParam: 1,
-    queryFn: ({ pageParam = 1, queryKey }) => fetchSearchCityByName({ page: pageParam, perPage: DEFAULT_PER_PAGE, query: queryKey[1].query }),
-    getNextPageParam: (lastPage) => lastPage.metadata.isLastPage ? undefined : lastPage.metadata.currentPage + 1,
+    queryFn: ({ pageParam = 1, queryKey, signal }) =>
+      fetchSearchCityByName(
+        {
+          page: pageParam,
+          perPage: DEFAULT_PER_PAGE,
+          query: queryKey[1].query,
+        },
+        {
+          signal,
+        }
+      ),
+    getNextPageParam: (lastPage) =>
+      lastPage.metadata.isLastPage
+        ? undefined
+        : lastPage.metadata.currentPage + 1,
   });
 
-  const dataItems: SearchCityByName[] = useMemo(() => (result.data?.pages || [])
-    .reduce((acc: SearchCityByName[], page: SearchCityByNameResponse) => [...acc, ...page.items], []), [result.data]);
+  const dataItems: SearchCityByName[] = useMemo(
+    () =>
+      (result.data?.pages || []).reduce(
+        (acc: SearchCityByName[], page: SearchCityByNameResponse) => [
+          ...acc,
+          ...page.items,
+        ],
+        []
+      ),
+    [result.data]
+  );
 
-  return { ...result, dataItems }
+  return { ...result, dataItems };
 }

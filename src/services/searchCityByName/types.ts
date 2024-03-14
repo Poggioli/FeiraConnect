@@ -1,4 +1,6 @@
 import { PaginationRequest, PaginationResponse } from "@/services/api";
+import { InfiniteData, UseInfiniteQueryOptions } from "@tanstack/react-query";
+import { AxiosError } from "axios";
 
 export type SearchCityByName = {
   id: string;
@@ -8,6 +10,18 @@ export type SearchCityByName = {
 
 export type SearchCityByNameParams = {
   query: string;
-} & PaginationRequest
+} & PaginationRequest;
 
-export type SearchCityByNameResponse = PaginationResponse<SearchCityByName>
+export type SearchCityByNameResponse = PaginationResponse<SearchCityByName>;
+
+export type UseSearchCityByNameOptions = Omit<
+  UseInfiniteQueryOptions<
+    SearchCityByNameResponse,
+    AxiosError,
+    InfiniteData<SearchCityByNameResponse>,
+    SearchCityByNameResponse,
+    ["searchCityByName", Pick<SearchCityByNameParams, "query">],
+    number
+  >,
+  "queryKey" | "getNextPageParam" | "initialPageParam"
+>;

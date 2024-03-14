@@ -1,29 +1,38 @@
-import { ChangeEvent, useEffect, useState } from "react";
-import { useDebounce } from "@uidotdev/usehooks";
+import { useSearchCityByName } from "@/services/searchCityByName/searchCityByName";
+import { ChangeEvent, KeyboardEvent, useState } from "react";
 
 export function useIndexSearchBar() {
   const [open, setOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const debouncedSearchTerm = useDebounce(searchTerm, 800);
-
-  useEffect(() => {
-    console.log(debouncedSearchTerm);
-    setOpen(!!debouncedSearchTerm);
-  }, [debouncedSearchTerm]);
-
-  const handleOnFocus = () => {
-    setOpen(!!searchTerm);
-  }
+  const serviceUseSearchCityByName = useSearchCityByName(
+    { query: searchTerm },
+    { enabled: false }
+  );
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
 
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if(event.key === 'Enter') {
+      searchCity()
+    }
+  }
+
+  const searchCity = () => {
+    if(searchTerm) {
+      setOpen(true);
+      serviceUseSearchCityByName.fetchNextPage();
+    }
+  }
+
   return {
     open,
     setOpen,
     handleChange,
-    handleOnFocus,
+    handleKeyDown,
     searchTerm,
+    serviceUseSearchCityByName,
+    searchCity
   };
 }

@@ -1,0 +1,62 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/citys-by-name",
+    "queryParameters": {
+      "page": {
+        "equalTo": "2"
+      },
+      "perPage": {
+        "equalTo": "10"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 200,
+    "jsonBody": {
+      "metadata": {
+        "currentPage": 2,
+        "itemsPerPage": 10,
+        "totalPages": 2,
+        "totalItems": 16,
+        "isLastPage": true
+      },
+      "items": [
+        {
+          "id": "",
+          "slug": "abel-figueiredo",
+          "name": "Abel Figueiredo"
+        },
+        {
+          "id": "",
+          "slug": "abelardo-luz",
+          "name": "Abelardo Luz"
+        },
+        {
+          "id": "",
+          "slug": "abre-campo",
+          "name": "Abre Campo"
+        },
+        {
+          "id": "",
+          "slug": "abreu-e-lima",
+          "name": "Abreu e Lima"
+        },
+        {
+          "id": "",
+          "slug": "abreulandia",
+          "name": "Abreulândia"
+        },
+        {
+          "id": "",
+          "slug": "acaiaca",
+          "name": "Acaiaca"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
