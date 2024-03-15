@@ -1,0 +1,21 @@
+import { PaginationRequest, PaginationResponse } from "@/services/api";
+import { InfiniteData, UseInfiniteQueryOptions } from "@tanstack/react-query";
+import { AxiosError } from "axios";
+
+export type {{ pascalCase serviceName }} = {};
+
+export type {{ pascalCase serviceName }}Params = PaginationRequest;
+
+export type {{ pascalCase serviceName }}Response = PaginationResponse<{{ pascalCase serviceName }}>;
+
+export type Use{{ pascalCase serviceName }}Options = Omit<
+  UseInfiniteQueryOptions<
+    {{ pascalCase serviceName }}Response,
+    AxiosError,
+    InfiniteData<{{ pascalCase serviceName }}Response>,
+    {{ pascalCase serviceName }}Response,
+    ["{{camelCase serviceName}}"],
+    number
+  >,
+  "queryKey" | "getNextPageParam" | "initialPageParam"
+>;

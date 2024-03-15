@@ -1,0 +1,76 @@
+import { DEFAULT_PER_PAGE, api } from "@/services/api";
+import { InfiniteData, useInfiniteQuery } from "@tanstack/react-query";
+import { AxiosError, AxiosRequestConfig } from "axios";
+import qs from "qs";
+import { useMemo } from "react";
+import {
+  {{ pascalCase serviceName }},
+  {{ pascalCase serviceName }}Params,
+  {{ pascalCase serviceName }}Response,
+  Use{{ pascalCase serviceName }}Options,
+} from "./types";
+
+const url = '' as const
+
+async function fetch{{ pascalCase serviceName }}(
+  { page, perPage }: {{ pascalCase serviceName }}Params,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  config: AxiosRequestConfig<any> | undefined = {}
+): Promise<{{ pascalCase serviceName }}Response> {
+  const params = qs.stringify({ page, perPage });
+  const res = await api.get<{{ pascalCase serviceName }}Response>(
+    `${url}?${params}`,
+    config
+  );
+  return res.data;
+}
+
+const queryKey = "{{ camelCase serviceName }}" as const;
+
+export function createUse{{ pascalCase serviceName }}QueryKey(): ["{{ camelCase serviceName }}"] {
+  return [queryKey];
+}
+
+export function use{{ pascalCase serviceName }}(
+  options?: Use{{ pascalCase serviceName }}Options
+) {
+  const result = useInfiniteQuery<
+    {{ pascalCase serviceName }}Response,
+    AxiosError,
+    InfiniteData<{{ pascalCase serviceName }}Response>,
+    ["{{ camelCase serviceName }}"],
+    number
+  >({
+    ...options,
+    queryKey: createUse{{ pascalCase serviceName }}QueryKey(),
+    initialPageParam: 1,
+    queryFn: ({ pageParam = 1, signal }) =>
+      fetch{{ pascalCase serviceName }}(
+        {
+          page: pageParam,
+          perPage: DEFAULT_PER_PAGE
+        },
+        {
+          signal,
+        }
+      ),
+    getNextPageParam: (lastPage) =>
+      lastPage.metadata.isLastPage
+        ? undefined
+        : lastPage.metadata.currentPage + 1,
+  });
+
+  const dataItems: {{ pascalCase serviceName }}[] = useMemo(
+    () =>
+      (result.data?.pages || []).reduce(
+        (acc: {{ pascalCase serviceName }}[], page: {{ pascalCase serviceName }}Response) => [
+          ...acc,
+          ...page.items,
+        ],
+        []
+      ),
+    [result.data]
+  );
+
+  return { ...result, dataItems };
+}

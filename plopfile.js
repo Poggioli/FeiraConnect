@@ -63,17 +63,17 @@ export default function (plop) {
         actions.push(
           {
             type: "add",
-            path: "src/services/{{pascalCase componentName}}/index.ts",
+            path: "src/services/{{camelCase serviceName}}/index.ts",
             templateFile: "plop-templates/services/get/paginated/index.hbs",
           },
           {
             type: "add",
-            path: "src/services/{{pascalCase componentName}}/types.ts",
+            path: "src/services/{{camelCase serviceName}}/types.ts",
             templateFile: "plop-templates/services/get/paginated/types.hbs",
           },
           {
             type: "add",
-            path: "src/services/{{pascalCase componentName}}/{{pascalCase componentName}}.ts",
+            path: "src/services/{{camelCase serviceName}}/{{camelCase serviceName}}.ts",
             templateFile: "plop-templates/services/get/paginated/service.hbs",
           },
         );
@@ -83,17 +83,17 @@ export default function (plop) {
         actions.push(
           {
             type: "add",
-            path: "src/services/{{pascalCase componentName}}/index.ts",
+            path: "src/services/{{camelCase serviceName}}/index.ts",
             templateFile: "plop-templates/services/get/index.hbs",
           },
           {
             type: "add",
-            path: "src/services/{{pascalCase componentName}}/types.ts",
+            path: "src/services/{{camelCase serviceName}}/types.ts",
             templateFile: "plop-templates/services/get/types.hbs",
           },
           {
             type: "add",
-            path: "src/services/{{pascalCase componentName}}/{{pascalCase componentName}}.ts",
+            path: "src/services/{{camelCase serviceName}}/{{camelCase serviceName}}.ts",
             templateFile: "plop-templates/services/get/service.hbs",
           },
         );
@@ -103,17 +103,17 @@ export default function (plop) {
         actions.push(
           {
             type: "add",
-            path: "src/services/{{pascalCase componentName}}/index.ts",
+            path: "src/services/{{camelCase serviceName}}/index.ts",
             templateFile: "plop-templates/services/post/index.hbs",
           },
           {
             type: "add",
-            path: "src/services/{{pascalCase componentName}}/types.ts",
+            path: "src/services/{{camelCase serviceName}}/types.ts",
             templateFile: "plop-templates/services/post/types.hbs",
           },
           {
             type: "add",
-            path: "src/services/{{pascalCase componentName}}/{{pascalCase componentName}}.ts",
+            path: "src/services/{{camelCase serviceName}}/{{camelCase serviceName}}.ts",
             templateFile: "plop-templates/services/post/service.hbs",
           },
         );
@@ -123,17 +123,17 @@ export default function (plop) {
         actions.push(
           {
             type: "add",
-            path: "src/services/{{pascalCase componentName}}/index.ts",
+            path: "src/services/{{camelCase serviceName}}/index.ts",
             templateFile: "plop-templates/services/put/index.hbs",
           },
           {
             type: "add",
-            path: "src/services/{{pascalCase componentName}}/types.ts",
+            path: "src/services/{{camelCase serviceName}}/types.ts",
             templateFile: "plop-templates/services/put/types.hbs",
           },
           {
             type: "add",
-            path: "src/services/{{pascalCase componentName}}/{{pascalCase componentName}}.ts",
+            path: "src/services/{{camelCase serviceName}}/{{camelCase serviceName}}.ts",
             templateFile: "plop-templates/services/put/service.hbs",
           },
         );
@@ -143,17 +143,17 @@ export default function (plop) {
         actions.push(
           {
             type: "add",
-            path: "src/services/{{pascalCase componentName}}/index.ts",
+            path: "src/services/{{camelCase serviceName}}/index.ts",
             templateFile: "plop-templates/services/delete/index.hbs",
           },
           {
             type: "add",
-            path: "src/services/{{pascalCase componentName}}/types.ts",
+            path: "src/services/{{camelCase serviceName}}/types.ts",
             templateFile: "plop-templates/services/delete/types.hbs",
           },
           {
             type: "add",
-            path: "src/services/{{pascalCase componentName}}/{{pascalCase componentName}}.ts",
+            path: "src/services/{{camelCase serviceName}}/{{camelCase serviceName}}.ts",
             templateFile: "plop-templates/services/delete/service.hbs",
           },
         );

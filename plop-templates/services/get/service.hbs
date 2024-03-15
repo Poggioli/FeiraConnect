@@ -1,0 +1,24 @@
+import { api } from "@/services/api";
+import { useQuery } from "@tanstack/react-query";
+import { AxiosError } from "axios";
+import {
+  Use{{ pascalCase serviceName }}, Use{{ pascalCase serviceName }}Options
+} from "./types";
+
+const queryKey = "{{ camelCase serviceName }}" as const;
+const url = '' as const;
+
+export function create{{ pascalCase serviceName }}QueryKey(): ["{{ camelCase serviceName }}"] {
+  return [queryKey];
+}
+
+export function use{{ pascalCase serviceName }}(options?: Use{{ pascalCase serviceName }}Options) {
+  return useQuery<Use{{ pascalCase serviceName }}[], AxiosError, Use{{ pascalCase serviceName }}[], ["{{ camelCase serviceName }}"]>({
+    ...options,
+    queryKey: create{{ pascalCase serviceName }}QueryKey(),
+    queryFn: async () => {
+      const res = await api.get<Use{{ pascalCase serviceName }}[]>(url);
+      return res.data;
+    }
+  })
+}
