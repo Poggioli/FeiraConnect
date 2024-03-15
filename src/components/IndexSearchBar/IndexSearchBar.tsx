@@ -65,11 +65,21 @@ export const IndexSearchBar: FC<IndexSearchBarProps> = () => {
             Buscando cidades <LoaderCircle className="h-5 w-5 animate-spin" />
           </p>
         ) : null}
-        {!isLoading && isSuccess && dataItems.length ? (
+        {isSuccess && dataItems.length ? (
           <ScrollArea className="h-[calc(var(--radix-popover-content-available-height)-3rem)]" >
             <div className="flex flex-col">
               {dataItems.map((city) => (
-                <Link ref={lastElementRef} to="/" key={city.slug} className="py-2 px-2 leading-7 text-muted-foreground hover:bg-muted hover:text-primary rounded-sm">{city.name}</Link>
+                <Link
+                  ref={lastElementRef}
+                  to="/city/$slug"
+                  params={{
+                    slug: city.slug
+                  }}
+                  key={city.slug}
+                  className="py-2 px-2 leading-7 text-muted-foreground hover:bg-muted hover:text-primary rounded-sm"
+                >
+                  {city.name}
+                </Link>
               ))}
               {isFetching ? (
                 <p className="flex flex-row gap-3 justify-center items-center leading-7 text-muted-foreground">
@@ -79,10 +89,16 @@ export const IndexSearchBar: FC<IndexSearchBarProps> = () => {
             </div>
           </ScrollArea>
         ) : null}
-        {!isLoading && isSuccess && !dataItems.length ? (
-          <p>Não encontramos nenhuma cidade com este nome</p>
+        {isSuccess && !dataItems.length ? (
+          <p className="flex flex-row gap-3 justify-center items-center leading-7 text-muted-foreground">
+            Não encontramos nenhuma cidade com este nome
+          </p>
         ) : null}
-        {!isLoading && isError ? <p>Erro</p> : null}
+        {isError ? (
+          <p className="flex flex-row gap-3 justify-center items-center leading-7 text-muted-foreground">
+            Ops, aconteceu algum erro...
+          </p>
+        ) : null}
       </PopoverContent>
     </Popover>
   );
