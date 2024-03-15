@@ -6,7 +6,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { IndexSearchBarProps } from "./types";
 import { useIndexSearchBar } from "./useIndexSearchBar";
 import { Link } from "@tanstack/react-router";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 
 export const IndexSearchBar: FC<IndexSearchBarProps> = () => {
 
