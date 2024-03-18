@@ -16,14 +16,15 @@ export const IndexSearchBar: FC<IndexSearchBarProps> = () => {
     setOpen,
     searchTerm,
     handleChange,
-    serviceUseSearchCityByName: {
+    service: {
       isFetching,
       isSuccess,
       isError,
       dataItems,
       fetchNextPage,
       hasNextPage,
-      isLoading
+      isLoading,
+      refetch
     },
     handleKeyDown,
     searchCity
@@ -96,7 +97,7 @@ export const IndexSearchBar: FC<IndexSearchBarProps> = () => {
         ) : null}
         {isError ? (
           <p className="flex flex-row gap-3 justify-center items-center leading-7 text-muted-foreground">
-            Ops, aconteceu algum erro...
+            Ops, aconteceu algum erro...<span className="underline-offset-2 underline hover:cursor-pointer" tabIndex={1} onClick={() => refetch()}>Tentar novamente</span>
           </p>
         ) : null}
       </PopoverContent>

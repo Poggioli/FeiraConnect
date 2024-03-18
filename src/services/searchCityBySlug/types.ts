@@ -5,6 +5,10 @@ export type UseSearchCityBySlug = {
   id: string;
   name: string;
   slug: string;
+  location: {
+    lat: number,
+    long: number
+  }
 };
 
 export type UseSearchCityBySlugOptions = UndefinedInitialDataOptions<

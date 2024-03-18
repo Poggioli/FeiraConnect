@@ -4,7 +4,7 @@ import { ChangeEvent, KeyboardEvent, useState } from "react";
 export function useIndexSearchBar() {
   const [open, setOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const serviceUseSearchCityByName = useSearchCityByName(
+  const service = useSearchCityByName(
     { query: searchTerm },
     { enabled: false }
   );
@@ -22,7 +22,7 @@ export function useIndexSearchBar() {
   const searchCity = () => {
     if(searchTerm) {
       setOpen(true);
-      serviceUseSearchCityByName.fetchNextPage();
+      service.fetchNextPage();
     }
   }
 
@@ -32,7 +32,7 @@ export function useIndexSearchBar() {
     handleChange,
     handleKeyDown,
     searchTerm,
-    serviceUseSearchCityByName,
+    service,
     searchCity
   };
 }
