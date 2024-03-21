@@ -72,11 +72,11 @@ export const IndexSearchBar: FC<IndexSearchBarProps> = () => {
               {dataItems.map((city) => (
                 <Link
                   ref={lastElementRef}
-                  to="/city/$slug"
+                  to="/city/$city"
                   params={{
-                    slug: city.slug
+                    city: city.slug
                   }}
-                  key={city.slug}
+                  key={city.id}
                   className="py-2 px-2 leading-7 text-muted-foreground hover:bg-muted hover:text-primary rounded-sm"
                 >
                   {city.name}

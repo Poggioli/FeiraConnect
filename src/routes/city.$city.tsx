@@ -1,7 +1,7 @@
 import { CitySlugLoading } from '@/components/CitySlugLoading';
 import { FarmersMarketList } from '@/components/FarmersMarketList';
 import { useSearchCityBySlug } from '@/services/searchCityBySlug';
-import { Frequency } from '@/services/searchFarmersMarketByCitySlug';
+import { Frequency } from '@/services/searchFarmersMarketByCityId';
 import { createFileRoute } from '@tanstack/react-router';
 import { Helmet } from 'react-helmet';
 
@@ -29,7 +29,7 @@ function City() {
           </Helmet>
           <div className="p-6 md:p-12 min-h-full w-full flex flex-col gap-4 items-start max-w-screen-xlg m-auto" >
             <h1 className='text-center scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl'>{data.name}</h1>
-            <FarmersMarketList city={city} />
+            <FarmersMarketList city={data.id} />
           </div>
         </>
       ) : null}

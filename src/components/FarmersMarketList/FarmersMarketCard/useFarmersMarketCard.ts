@@ -1,4 +1,4 @@
-import { Frequency } from "@/services/searchFarmersMarketByCitySlug";
+import { Frequency } from "@/services/searchFarmersMarketByCityId";
 import { getHours } from "date-fns";
 import { UseFarmersMarketCardProps } from "./types";
 

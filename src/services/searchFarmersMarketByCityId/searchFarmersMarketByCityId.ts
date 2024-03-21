@@ -5,23 +5,23 @@ import qs from "qs";
 import { useMemo } from "react";
 import {
   Frequency,
-  SearchFarmersMarketByCitySlug,
-  SearchFarmersMarketByCitySlugParams,
-  SearchFarmersMarketByCitySlugResponse,
-  UseSearchFarmersMarketByCitySlugOptions,
+  SearchFarmersMarketByCityId,
+  SearchFarmersMarketByCityIdParams,
+  SearchFarmersMarketByCityIdResponse,
+  UseSearchFarmersMarketByCityIdOptions,
 } from "./types";
 
 const url = "farmers-market" as const;
 
-async function fetchSearchFarmersMarketByCitySlug(
-  { page, perPage, query }: SearchFarmersMarketByCitySlugParams,
+async function fetchSearchFarmersMarketByCityId(
+  { page, perPage, query }: SearchFarmersMarketByCityIdParams,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   config: AxiosRequestConfig<any> | undefined = {}
-): Promise<SearchFarmersMarketByCitySlugResponse> {
+): Promise<SearchFarmersMarketByCityIdResponse> {
   const { city, ...searchParams } = query;
   const params = qs.stringify({ page, perPage, ...searchParams });
-  const res = await api.get<SearchFarmersMarketByCitySlugResponse>(
-    `${city}/${url}?${params}`,
+  const res = await api.get<SearchFarmersMarketByCityIdResponse>(
+    `cities/${city}/${url}?${params}`,
     config
   );
 
@@ -44,7 +44,7 @@ type CreateSearchKeyType = {
   frequency?: Frequency;
   hour?: number;
 };
-export function createUseSearchFarmersMarketByCitySlugQueryKey({
+export function createUseSearchFarmersMarketByCityIdQueryKey({
   city,
   frequency,
   hour,
@@ -57,14 +57,14 @@ export function createUseSearchFarmersMarketByCitySlugQueryKey({
   return [queryKey, city, frequency, hour];
 }
 
-export function useSearchFarmersMarketByCitySlug(
-  { query }: Pick<SearchFarmersMarketByCitySlugParams, "query">,
-  options?: UseSearchFarmersMarketByCitySlugOptions
+export function useSearchFarmersMarketByCityId(
+  { query }: Pick<SearchFarmersMarketByCityIdParams, "query">,
+  options?: UseSearchFarmersMarketByCityIdOptions
 ) {
   const result = useInfiniteQuery<
-    SearchFarmersMarketByCitySlugResponse,
+    SearchFarmersMarketByCityIdResponse,
     AxiosError,
-    InfiniteData<SearchFarmersMarketByCitySlugResponse>,
+    InfiniteData<SearchFarmersMarketByCityIdResponse>,
     [
       "searchFarmersMarketByCitySlug",
       string,
@@ -74,10 +74,10 @@ export function useSearchFarmersMarketByCitySlug(
     number
   >({
     ...options,
-    queryKey: createUseSearchFarmersMarketByCitySlugQueryKey({ ...query }),
+    queryKey: createUseSearchFarmersMarketByCityIdQueryKey({ ...query }),
     initialPageParam: 1,
     queryFn: ({ pageParam = 1, signal }) =>
-      fetchSearchFarmersMarketByCitySlug(
+      fetchSearchFarmersMarketByCityId(
         {
           page: pageParam,
           perPage: DEFAULT_PER_PAGE,
@@ -93,12 +93,12 @@ export function useSearchFarmersMarketByCitySlug(
         : lastPage.metadata.currentPage + 1,
   });
 
-  const dataItems: SearchFarmersMarketByCitySlug[] = useMemo(
+  const dataItems: SearchFarmersMarketByCityId[] = useMemo(
     () =>
       (result.data?.pages || []).reduce(
         (
-          acc: SearchFarmersMarketByCitySlug[],
-          page: SearchFarmersMarketByCitySlugResponse
+          acc: SearchFarmersMarketByCityId[],
+          page: SearchFarmersMarketByCityIdResponse
         ) => [...acc, ...page.items],
         []
       ),

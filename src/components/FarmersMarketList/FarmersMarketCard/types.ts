@@ -1,6 +1,6 @@
-import { Frequency, SearchFarmersMarketByCitySlug } from "@/services/searchFarmersMarketByCitySlug";
+import { Frequency, SearchFarmersMarketByCityId } from "@/services/searchFarmersMarketByCityId";
 
-export type FarmersMarketCardProps = SearchFarmersMarketByCitySlug
+export type FarmersMarketCardProps = SearchFarmersMarketByCityId
 
 export type UseFarmersMarketCardProps = {
   frequency: Frequency,

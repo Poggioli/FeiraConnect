@@ -4,7 +4,7 @@ import { AxiosError } from "axios";
 import { UseSearchCityBySlug, UseSearchCityBySlugOptions } from "./types";
 
 const queryKey = "searchCityBySlug" as const;
-const url = "citys" as const;
+const url = "cities" as const;
 
 export function createSearchCityBySlugQueryKey(
   slug: string

@@ -17,7 +17,7 @@ async function fetchSearchCityByName(
 ): Promise<SearchCityByNameResponse> {
   const params = qs.stringify({ q: query, page, perPage });
   const res = await api.get<SearchCityByNameResponse>(
-    `citys-by-name?${params}`,
+    `cities?${params}`,
     config
   );
   return res.data;
