@@ -28,6 +28,7 @@
           "name": "Feira dos Doces",
           "neighborhood": {
             "name": "Bairro Novo",
+            "slug": "bairro-novo",
             "location": {
               "lat": -23.5803,
               "long": -46.6483
@@ -42,6 +43,7 @@
           "name": "Feira de Artesanato",
           "neighborhood": {
             "name": "Jardim das Flores",
+            "slug": "jardim-das-flores",
             "location": {
               "lat": -23.5631,
               "long": -46.6629
@@ -56,6 +58,7 @@
           "name": "Feira da Amizade",
           "neighborhood": {
             "name": "Vila Amizade",
+            "slug": "vila-amizade",
             "location": {
               "lat": -23.5568,
               "long": -46.5436
@@ -70,6 +73,7 @@
           "name": "Feira Vegana",
           "neighborhood": {
             "name": "Vila Verde",
+            "slug": "vila-verde",
             "location": {
               "lat": -23.5762,
               "long": -46.6375
@@ -84,6 +88,7 @@
           "name": "Feira da Cultura Urbana",
           "neighborhood": {
             "name": "Vila Urbana",
+            "slug": "vila-urbana",
             "location": {
               "lat": -23.5585,
               "long": -46.5571
@@ -98,6 +103,7 @@
           "name": "Feira da Saúde",
           "neighborhood": {
             "name": "Vila Saudável",
+            "slug": "vila-saudavel",
             "location": {
               "lat": -23.5642,
               "long": -46.6421

@@ -16,6 +16,7 @@ export type SearchFarmersMarketByCitySlug = {
   name: string;
   neighborhood: {
     name: string;
+    slug: string;
     location: {
       lat: number;
       long: number;

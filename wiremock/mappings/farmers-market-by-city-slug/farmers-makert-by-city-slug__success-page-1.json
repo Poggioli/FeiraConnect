@@ -28,6 +28,7 @@
           "name": "Feira Orgânica do Parque",
           "neighborhood": {
             "name": "Centro",
+            "slug": "centro",
             "location": {
               "lat": -23.5505199,
               "long": -46.6333094
@@ -42,6 +43,7 @@
           "name": "Feira da Pizza",
           "neighborhood": {
             "name": "Bairro Alegre",
+            "slug": "bairro-alegre",
             "location": {
               "lat": -23.578166,
               "long": -46.643731
@@ -56,6 +58,7 @@
           "name": "Feira Cultural do Saber",
           "neighborhood": {
             "name": "Jardim do Conhecimento",
+            "slug": "jardim-do-conhecimento",
             "location": {
               "lat": -23.5629,
               "long": -46.6544
@@ -70,6 +73,7 @@
           "name": "Feira Literária Municipal",
           "neighborhood": {
             "name": "Cidade Nova",
+            "slug": "cidade-nova",
             "location": {
               "lat": -23.5488,
               "long": -46.6387
@@ -84,6 +88,7 @@
           "name": "Feira da Colheita",
           "neighborhood": {
             "name": "Centro",
+            "slug": "centro",
             "location": {
               "lat": -23.5425,
               "long": -46.6295
@@ -98,6 +103,7 @@
           "name": "Feira Cinematográfica",
           "neighborhood": {
             "name": "Vila Esperança",
+            "slug": "vila-esperanca",
             "location": {
               "lat": -23.5357,
               "long": -46.5311
@@ -112,6 +118,7 @@
           "name": "Feira Gastronômica dos Jardins",
           "neighborhood": {
             "name": "Jardins",
+            "slug": "jardins",
             "location": {
               "lat": -23.5687,
               "long": -46.6639
@@ -126,6 +133,7 @@
           "name": "Feira Fitness",
           "neighborhood": {
             "name": "Jardim Atlântico",
+            "slug": "jardim-atlantico",
             "location": {
               "lat": -23.5906,
               "long": -46.6718
@@ -140,6 +148,7 @@
           "name": "Feira Cultural do Teatro",
           "neighborhood": {
             "name": "Centro",
+            "slug": "centro",
             "location": {
               "lat": -23.5475,
               "long": -46.6361
@@ -154,6 +163,7 @@
           "name": "Feira da Juventude",
           "neighborhood": {
             "name": "Vila Progresso",
+            "slug": "vila-progresso",
             "location": {
               "lat": -23.5579,
               "long": -46.5543

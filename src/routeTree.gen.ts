@@ -14,6 +14,7 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as CitySlugImport } from './routes/city.$slug'
+import { Route as CitySlugNeighborhoodImport } from './routes/city._$slug.$neighborhood'
 
 // Create Virtual Routes
 
@@ -31,6 +32,11 @@ const CitySlugRoute = CitySlugImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const CitySlugNeighborhoodRoute = CitySlugNeighborhoodImport.update({
+  path: '/city/$slug/$neighborhood',
+  getParentRoute: () => rootRoute,
+} as any)
+
 // Populate the FileRoutesByPath interface
 
 declare module '@tanstack/react-router' {
@@ -43,11 +49,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CitySlugImport
       parentRoute: typeof rootRoute
     }
+    '/city/_$slug/$neighborhood': {
+      preLoaderRoute: typeof CitySlugNeighborhoodImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren([IndexLazyRoute, CitySlugRoute])
+export const routeTree = rootRoute.addChildren([
+  IndexLazyRoute,
+  CitySlugRoute,
+  CitySlugNeighborhoodRoute,
+])
 
 /* prettier-ignore-end */

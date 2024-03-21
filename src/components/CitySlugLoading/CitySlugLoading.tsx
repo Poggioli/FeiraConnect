@@ -6,7 +6,7 @@ import { FarmersMarketCardLoading } from "@/components/FarmersMarketList/Farmers
 export const CitySlugLoading: FC = () => {
 
   return (
-    <div className="p-6 md:p-12 h-full w-full flex flex-col gap-4 items-start max-w-screen-xlg m-auto">
+    <div className="p-6 md:p-12 min-h-full w-full flex flex-col gap-4 items-start max-w-screen-xlg m-auto">
       <Skeleton className="min-h-10 w-40" />
       <ScrollArea className="w-full whitespace-nowrap">
         <div className="w-max flex flex-row items-center gap-4">
