@@ -1,0 +1,116 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/(.*)/farmers-market",
+    "queryParameters": {
+      "page": {
+        "equalTo": "2"
+      },
+      "perPage": {
+        "equalTo": "10"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 200,
+    "jsonBody": {
+      "metadata": {
+        "currentPage": 2,
+        "itemsPerPage": 10,
+        "totalPages": 2,
+        "totalItems": 16,
+        "isLastPage": true
+      },
+      "items": [
+        {
+          "id": "d1a041f4-ef9f-4cb3-8126-8e2bf6fd170e",
+          "name": "Feira dos Doces",
+          "neighborhood": {
+            "name": "Bairro Novo",
+            "location": {
+              "lat": -23.5803,
+              "long": -46.6483
+            }
+          },
+          "frequency": "friday",
+          "startTime": "2024-03-22T14:00:00Z",
+          "endTime": "2024-03-22T18:00:00Z"
+        },
+        {
+          "id": "ca3bf089-298e-45f4-96b3-0ebd2d6f9c4d",
+          "name": "Feira de Artesanato",
+          "neighborhood": {
+            "name": "Jardim das Flores",
+            "location": {
+              "lat": -23.5631,
+              "long": -46.6629
+            }
+          },
+          "frequency": "sunday",
+          "startTime": "2024-03-23T09:00:00Z",
+          "endTime": "2024-03-23T16:00:00Z"
+        },
+        {
+          "id": "b1fda42e-9a95-47e5-8c7e-2e8b158e6313",
+          "name": "Feira da Amizade",
+          "neighborhood": {
+            "name": "Vila Amizade",
+            "location": {
+              "lat": -23.5568,
+              "long": -46.5436
+            }
+          },
+          "frequency": "saturday",
+          "startTime": "2024-03-24T10:00:00Z",
+          "endTime": "2024-03-24T14:00:00Z"
+        },
+        {
+          "id": "3f19f1e5-1e7c-4666-bf3e-fa7900c9c78b",
+          "name": "Feira Vegana",
+          "neighborhood": {
+            "name": "Vila Verde",
+            "location": {
+              "lat": -23.5762,
+              "long": -46.6375
+            }
+          },
+          "frequency": "wednesday",
+          "startTime": "2024-03-19T12:00:00Z",
+          "endTime": "2024-03-19T20:00:00Z"
+        },
+        {
+          "id": "60e8769e-3fb7-42ff-9478-3cc8f7115d1c",
+          "name": "Feira da Cultura Urbana",
+          "neighborhood": {
+            "name": "Vila Urbana",
+            "location": {
+              "lat": -23.5585,
+              "long": -46.5571
+            }
+          },
+          "frequency": "friday",
+          "startTime": "2024-03-26T16:00:00Z",
+          "endTime": "2024-03-26T22:00:00Z"
+        },
+        {
+          "id": "d0657ee1-d20a-4d6c-b92b-6d0543da4f87",
+          "name": "Feira da Saúde",
+          "neighborhood": {
+            "name": "Vila Saudável",
+            "location": {
+              "lat": -23.5642,
+              "long": -46.6421
+            }
+          },
+          "frequency": "sunday",
+          "startTime": "2024-03-27T08:00:00Z",
+          "endTime": "2024-03-27T12:00:00Z"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
