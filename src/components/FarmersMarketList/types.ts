@@ -1,7 +1,7 @@
 export type FarmersMarketListProps = {
-  slug: string;
+  city: string;
 };
 
 export type UseFarmersMarketListProps = {
-  slug: string
+  city: string
 }

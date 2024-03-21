@@ -5,7 +5,7 @@ import { Frequency } from '@/services/searchFarmersMarketByCitySlug';
 import { createFileRoute } from '@tanstack/react-router';
 import { Helmet } from 'react-helmet';
 
-export const Route = createFileRoute('/city/$slug')({
+export const Route = createFileRoute('/city/$city')({
   component: City,
   validateSearch: (search: Record<string, unknown>): { workingNow?: boolean, frequency?: Frequency } => ({
     ...(search.workingNow === false || search.workingNow === true ? { workingNow: search.workingNow } : {}),
@@ -15,8 +15,8 @@ export const Route = createFileRoute('/city/$slug')({
 
 function City() {
 
-  const { slug } = Route.useParams();
-  const { isLoading, data, isSuccess, isError } = useSearchCityBySlug(slug);
+  const { city } = Route.useParams();
+  const { isLoading, data, isSuccess, isError } = useSearchCityBySlug(city);
 
   return isLoading ? (
     <CitySlugLoading />
@@ -29,7 +29,7 @@ function City() {
           </Helmet>
           <div className="p-6 md:p-12 min-h-full w-full flex flex-col gap-4 items-start max-w-screen-xlg m-auto" >
             <h1 className='text-center scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl'>{data.name}</h1>
-            <FarmersMarketList slug={slug} />
+            <FarmersMarketList city={city} />
           </div>
         </>
       ) : null}

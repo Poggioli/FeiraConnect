@@ -13,8 +13,8 @@ import { createFileRoute } from '@tanstack/react-router'
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
-import { Route as CitySlugImport } from './routes/city.$slug'
-import { Route as CitySlugNeighborhoodImport } from './routes/city._$slug.$neighborhood'
+import { Route as CityCityImport } from './routes/city.$city'
+import { Route as CityCityNeighborhoodImport } from './routes/city._$city.$neighborhood'
 
 // Create Virtual Routes
 
@@ -27,13 +27,13 @@ const IndexLazyRoute = IndexLazyImport.update({
   getParentRoute: () => rootRoute,
 } as any).lazy(() => import('./routes/index.lazy').then((d) => d.Route))
 
-const CitySlugRoute = CitySlugImport.update({
-  path: '/city/$slug',
+const CityCityRoute = CityCityImport.update({
+  path: '/city/$city',
   getParentRoute: () => rootRoute,
 } as any)
 
-const CitySlugNeighborhoodRoute = CitySlugNeighborhoodImport.update({
-  path: '/city/$slug/$neighborhood',
+const CityCityNeighborhoodRoute = CityCityNeighborhoodImport.update({
+  path: '/city/$city/$neighborhood',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -45,12 +45,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyImport
       parentRoute: typeof rootRoute
     }
-    '/city/$slug': {
-      preLoaderRoute: typeof CitySlugImport
+    '/city/$city': {
+      preLoaderRoute: typeof CityCityImport
       parentRoute: typeof rootRoute
     }
-    '/city/_$slug/$neighborhood': {
-      preLoaderRoute: typeof CitySlugNeighborhoodImport
+    '/city/_$city/$neighborhood': {
+      preLoaderRoute: typeof CityCityNeighborhoodImport
       parentRoute: typeof rootRoute
     }
   }
@@ -60,8 +60,8 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren([
   IndexLazyRoute,
-  CitySlugRoute,
-  CitySlugNeighborhoodRoute,
+  CityCityRoute,
+  CityCityNeighborhoodRoute,
 ])
 
 /* prettier-ignore-end */

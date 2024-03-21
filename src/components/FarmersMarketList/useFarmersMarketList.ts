@@ -8,10 +8,10 @@ import { getHours } from "date-fns";
 import { useMemo } from "react";
 import { UseFarmersMarketListProps } from "./types";
 
-export function useFarmersMarketList({ slug }: UseFarmersMarketListProps) {
+export function useFarmersMarketList({ city }: UseFarmersMarketListProps) {
   const navigate = useNavigate();
   const { frequency, workingNow } = useSearch({
-    from: "/city/$slug",
+    from: "/city/$city",
   });
 
   const hour: number | undefined = useMemo(() => {
@@ -27,7 +27,7 @@ export function useFarmersMarketList({ slug }: UseFarmersMarketListProps) {
   }, [workingNow, frequency]);
 
   const service = useSearchFarmersMarketByCitySlug({
-    query: { city: slug, frequency: weekDay, hour },
+    query: { city, frequency: weekDay, hour },
   });
 
   function changeSearchParams({

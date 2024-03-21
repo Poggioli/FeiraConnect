@@ -6,7 +6,7 @@ import { FarmersMarketListProps } from "./types";
 import { useFarmersMarketList } from "./useFarmersMarketList";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
-export const FarmersMarketList: FC<FarmersMarketListProps> = ({ slug }) => {
+export const FarmersMarketList: FC<FarmersMarketListProps> = ({ city }) => {
 
   const {
     handleOnCheckedChange,
@@ -18,7 +18,7 @@ export const FarmersMarketList: FC<FarmersMarketListProps> = ({ slug }) => {
       isSuccess,
       isFetching
     }
-  } = useFarmersMarketList({ slug });
+  } = useFarmersMarketList({ city });
 
   return (
     <>

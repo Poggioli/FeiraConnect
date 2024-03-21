@@ -12,7 +12,7 @@ export const FarmersMarketCard: FC<FarmersMarketCardProps> = ({ name, neighborho
 
   return (
     <Link
-      from="/city/$slug"
+      from="/city/$city"
       to="./$neighborhood"
       params={{ neighborhood: neighborhood.slug }}
     >
