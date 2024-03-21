@@ -67,7 +67,7 @@ export const IndexSearchBar: FC<IndexSearchBarProps> = () => {
           </p>
         ) : null}
         {isSuccess && dataItems.length ? (
-          <ScrollArea className="h-[calc(var(--radix-popover-content-available-height)-3rem)]" >
+          <ScrollArea className="h-[calc(var(--radix-popover-content-available-height)-3rem)] overflow-hidden" >
             <div className="flex flex-col">
               {dataItems.map((city) => (
                 <Link
