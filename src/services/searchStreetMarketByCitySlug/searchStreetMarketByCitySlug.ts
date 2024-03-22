@@ -5,22 +5,22 @@ import qs from "qs";
 import { useMemo } from "react";
 import {
   Frequency,
-  SearchFarmersMarketByCitySlug,
-  SearchFarmersMarketByCitySlugParams,
-  SearchFarmersMarketByCitySlugResponse,
-  UseSearchFarmersMarketByCitySlugOptions,
+  SearchStreetMarketByCitySlug,
+  SearchStreetMarketByCitySlugParams,
+  SearchStreetMarketByCitySlugResponse,
+  UseSearchStreetMarketByCitySlugOptions,
 } from "./types";
 
-const url = "farmers-market" as const;
+const url = "street-markets" as const;
 
-async function fetchSearchFarmersMarketByCitySlug(
-  { page, perPage, query }: SearchFarmersMarketByCitySlugParams,
+async function fetchSearchStreetMarketByCitySlug(
+  { page, perPage, query }: SearchStreetMarketByCitySlugParams,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   config: AxiosRequestConfig<any> | undefined = {}
-): Promise<SearchFarmersMarketByCitySlugResponse> {
+): Promise<SearchStreetMarketByCitySlugResponse> {
   const { city, ...searchParams } = query;
   const params = qs.stringify({ page, perPage, ...searchParams });
-  const res = await api.get<SearchFarmersMarketByCitySlugResponse>(
+  const res = await api.get<SearchStreetMarketByCitySlugResponse>(
     `cities/${city}/${url}?${params}`,
     config
   );
@@ -37,19 +37,19 @@ async function fetchSearchFarmersMarketByCitySlug(
   return mappedValue;
 }
 
-const queryKey = "searchFarmersMarketByCitySlug" as const;
+const queryKey = "searchStreetMarketByCitySlug" as const;
 
 type CreateSearchKeyType = {
   city: string;
   frequency?: Frequency;
   hour?: number;
 };
-export function createUseSearchFarmersMarketByCitySlugQueryKey({
+export function createUseSearchStreetMarketByCitySlugQueryKey({
   city,
   frequency,
   hour,
 }: CreateSearchKeyType): [
-  "searchFarmersMarketByCitySlug",
+  "searchStreetMarketByCitySlug",
   string,
   Frequency | undefined,
   number | undefined,
@@ -57,16 +57,16 @@ export function createUseSearchFarmersMarketByCitySlugQueryKey({
   return [queryKey, city, frequency, hour];
 }
 
-export function useSearchFarmersMarketByCitySlug(
-  { query }: Pick<SearchFarmersMarketByCitySlugParams, "query">,
-  options?: UseSearchFarmersMarketByCitySlugOptions
+export function useSearchStreetMarketByCitySlug(
+  { query }: Pick<SearchStreetMarketByCitySlugParams, "query">,
+  options?: UseSearchStreetMarketByCitySlugOptions
 ) {
   const result = useInfiniteQuery<
-    SearchFarmersMarketByCitySlugResponse,
+    SearchStreetMarketByCitySlugResponse,
     AxiosError,
-    InfiniteData<SearchFarmersMarketByCitySlugResponse>,
+    InfiniteData<SearchStreetMarketByCitySlugResponse>,
     [
-      "searchFarmersMarketByCitySlug",
+      "searchStreetMarketByCitySlug",
       string,
       Frequency | undefined,
       number | undefined,
@@ -74,10 +74,10 @@ export function useSearchFarmersMarketByCitySlug(
     number
   >({
     ...options,
-    queryKey: createUseSearchFarmersMarketByCitySlugQueryKey({ ...query }),
+    queryKey: createUseSearchStreetMarketByCitySlugQueryKey({ ...query }),
     initialPageParam: 1,
     queryFn: ({ pageParam = 1, signal }) =>
-      fetchSearchFarmersMarketByCitySlug(
+      fetchSearchStreetMarketByCitySlug(
         {
           page: pageParam,
           perPage: DEFAULT_PER_PAGE,
@@ -93,12 +93,12 @@ export function useSearchFarmersMarketByCitySlug(
         : lastPage.metadata.currentPage + 1,
   });
 
-  const dataItems: SearchFarmersMarketByCitySlug[] = useMemo(
+  const dataItems: SearchStreetMarketByCitySlug[] = useMemo(
     () =>
       (result.data?.pages || []).reduce(
         (
-          acc: SearchFarmersMarketByCitySlug[],
-          page: SearchFarmersMarketByCitySlugResponse
+          acc: SearchStreetMarketByCitySlug[],
+          page: SearchStreetMarketByCitySlugResponse
         ) => [...acc, ...page.items],
         []
       ),

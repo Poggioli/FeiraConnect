@@ -1,7 +1,7 @@
 import { CitySlugLoading } from '@/components/CitySlugLoading';
 import { FarmersMarketList } from '@/components/FarmersMarketList';
 import { useSearchCityBySlug } from '@/services/searchCityBySlug';
-import { Frequency } from '@/services/searchFarmersMarketByCitySlug';
+import { Frequency } from '@/services/searchStreetMarketByCitySlug';
 import { createFileRoute } from '@tanstack/react-router';
 import { Helmet } from 'react-helmet';
 

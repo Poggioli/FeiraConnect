@@ -11,7 +11,7 @@ export type Frequency =
   | "saturday"
   | "sunday";
 
-export type SearchFarmersMarketByCitySlug = {
+export type SearchStreetMarketByCitySlug = {
   id: string;
   name: string;
   neighborhood: {
@@ -27,7 +27,7 @@ export type SearchFarmersMarketByCitySlug = {
   endTime: Date;
 };
 
-export type SearchFarmersMarketByCitySlugParams = PaginationRequest & {
+export type SearchStreetMarketByCitySlugParams = PaginationRequest & {
   query: {
     city: string;
     frequency?: Frequency;
@@ -35,17 +35,17 @@ export type SearchFarmersMarketByCitySlugParams = PaginationRequest & {
   };
 };
 
-export type SearchFarmersMarketByCitySlugResponse =
-  PaginationResponse<SearchFarmersMarketByCitySlug>;
+export type SearchStreetMarketByCitySlugResponse =
+  PaginationResponse<SearchStreetMarketByCitySlug>;
 
-export type UseSearchFarmersMarketByCitySlugOptions = Omit<
+export type UseSearchStreetMarketByCitySlugOptions = Omit<
   UseInfiniteQueryOptions<
-    SearchFarmersMarketByCitySlugResponse,
+    SearchStreetMarketByCitySlugResponse,
     AxiosError,
-    InfiniteData<SearchFarmersMarketByCitySlugResponse>,
-    SearchFarmersMarketByCitySlugResponse,
+    InfiniteData<SearchStreetMarketByCitySlugResponse>,
+    SearchStreetMarketByCitySlugResponse,
     [
-      "searchFarmersMarketByCitySlug",
+      "searchStreetMarketByCitySlug",
       string,
       Frequency | undefined,
       number | undefined,
