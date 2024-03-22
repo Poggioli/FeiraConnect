@@ -1,8 +1,8 @@
 import { getWeekDay, isValidFrequency } from "@/lib/utils";
 import {
   Frequency,
-  useSearchFarmersMarketByCityId,
-} from "@/services/searchFarmersMarketByCityId";
+  useSearchFarmersMarketByCitySlug,
+} from "@/services/searchFarmersMarketByCitySlug";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { getHours } from "date-fns";
 import { useMemo } from "react";
@@ -26,7 +26,7 @@ export function useFarmersMarketList({ city }: UseFarmersMarketListProps) {
     return workingNow ? getWeekDay() : undefined;
   }, [workingNow, frequency]);
 
-  const service = useSearchFarmersMarketByCityId({
+  const service = useSearchFarmersMarketByCitySlug({
     query: { city, frequency: weekDay, hour },
   });
 

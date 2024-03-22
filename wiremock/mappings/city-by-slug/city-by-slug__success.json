@@ -9,7 +9,11 @@
     "jsonBody": {
       "id": "64ee023a-0da7-4c7d-b96c-53606012f904",
       "name": "Campinas",
-      "slug": "campinas"
+      "slug": "campinas",
+      "location": {
+        "lat": -23.5488,
+        "long": -46.6387
+      }
     },
     "headers": {
       "Content-Type": "application/json"

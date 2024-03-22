@@ -1,0 +1,112 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/farmers-market/(.*)",
+    "queryParameters": {
+      "page": {
+        "equalTo": "1"
+      },
+      "perPage": {
+        "equalTo": "10"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 200,
+    "jsonBody": {
+      "metadata": {
+        "currentPage": 1,
+        "itemsPerPage": 10,
+        "totalPages": 2,
+        "totalItems": 16,
+        "isLastPage": false
+      },
+      "items": [
+        {
+          "id": "a875ec79-0b36-45f3-bd77-7b112fe6c714",
+          "name": "Hortifruti da Maria",
+          "phone": "(31) 12345-6789",
+          "whatsApp": "(31) 12345-6789",
+          "email": "hortifrutidamaria@gmail.com",
+          "products": ["Bananas", "Maçãs", "Pêssegos", "Abóboras"]
+        },
+        {
+          "id": "ec2a3b62-9c94-4058-b62c-3ae5eb67f6a4",
+          "name": "Banca do Joãozinho",
+          "phone": "(11) 98765-4321",
+          "whatsApp": "(11) 98765-4321",
+          "email": "bancadojoaozinho@gmail.com",
+          "products": ["Cenouras", "Batatas", "Alfaces", "Tomates", "Pimentões"]
+        },
+        {
+          "id": "da7ae6d5-d7b3-4828-a446-df7e1e3b59ac",
+          "name": "Frutas da Vovó",
+          "phone": "(21) 54321-0987",
+          "whatsApp": "(21) 54321-0987",
+          "email": "frutasdavovo@gmail.com",
+          "products": ["Morangos", "Uvas", "Melancias", "Laranjas", "Limões"]
+        },
+        {
+          "id": "f3563eb7-4a2c-4635-8d5d-3d21d5938d84",
+          "name": "Quitanda do Zé",
+          "phone": "(51) 65432-1098",
+          "whatsApp": "(51) 65432-1098",
+          "email": "quitandadoze@gmail.com",
+          "products": ["Bananas", "Mangas", "Maracujás", "Tangerinas"]
+        },
+        {
+          "id": "b7ec63f4-62a1-4b97-b2a6-63d09a122399",
+          "name": "Feira do João",
+          "phone": "(41) 87654-3210",
+          "whatsApp": "(41) 87654-3210",
+          "email": "feiradojoao@gmail.com",
+          "products": ["Alfaces", "Cenouras", "Tomates", "Abóboras", "Pepinos"]
+        },
+        {
+          "id": "d08fe0c3-6822-442a-8be4-33646516b392",
+          "name": "Hortifruti da Ana",
+          "phone": "(35) 54321-0987",
+          "whatsApp": "(35) 54321-0987",
+          "email": "hortifrutidaana@gmail.com",
+          "products": ["Maçãs", "Laranjas", "Pêssegos", "Melancias", "Abacaxis"]
+        },
+        {
+          "id": "c57db18e-fc0f-4697-8914-4f4ecf076344",
+          "name": "Banca do Seu Antônio",
+          "phone": "(27) 87654-3210",
+          "whatsApp": "(27) 87654-3210",
+          "email": "bancadoseuantonio@gmail.com",
+          "products": ["Tomates", "Cebolas", "Abóboras", "Pimentões"]
+        },
+        {
+          "id": "2c1e06e8-b2cf-4735-8bae-894b4083e4d9",
+          "name": "Feira da Maria",
+          "phone": "(47) 23456-7890",
+          "whatsApp": "(47) 23456-7890",
+          "email": "feiradamaria@gmail.com",
+          "products": ["Pepinos", "Alfaces", "Couves", "Berinjelas", "Batatas"]
+        },
+        {
+          "id": "4b34df62-07d2-4b86-aade-83f3cd7c0133",
+          "name": "Banca da Joana",
+          "phone": "(81) 98765-4321",
+          "whatsApp": "(81) 98765-4321",
+          "email": "bancadajoana@gmail.com",
+          "products": ["Laranjas", "Limões", "Bananas", "Abacaxis", "Mangas"]
+        },
+        {
+          "id": "bc0141a0-6b68-4a1e-a44c-fdde2f2a61c2",
+          "name": "Hortifruti do Seu Toninho",
+          "phone": "(61) 76543-2109",
+          "whatsApp": "(61) 76543-2109",
+          "email": "hortifrutidoseutoninho@gmail.com",
+          "products": ["Cenouras", "Beterrabas", "Batatas"]
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

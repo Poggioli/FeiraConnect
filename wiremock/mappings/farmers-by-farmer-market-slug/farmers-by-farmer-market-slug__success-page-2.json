@@ -1,0 +1,93 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/farmers-market/(.*)",
+    "queryParameters": {
+      "page": {
+        "equalTo": "2"
+      },
+      "perPage": {
+        "equalTo": "10"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 200,
+    "jsonBody": {
+      "metadata": {
+        "currentPage": 2,
+        "itemsPerPage": 10,
+        "totalPages": 2,
+        "totalItems": 16,
+        "isLastPage": true
+      },
+      "items": [
+        {
+          "id": "9b783d1a-8a29-4ee1-89b2-57f27df02914",
+          "name": "Sacolão da Ana",
+          "phone": "(55) 12345-6789",
+          "whatsApp": "(55) 12345-6789",
+          "email": "sacolaodaana@gmail.com",
+          "products": ["Abacaxis", "Mangas", "Maracujás", "Bananas"]
+        },
+        {
+          "id": "6f16e001-2c4e-4e7e-b4b0-94a20f9a6dd0",
+          "name": "Banca do Seu José",
+          "phone": "(62) 98765-4321",
+          "whatsApp": "(62) 98765-4321",
+          "email": "bancadoseujose@gmail.com",
+          "products": ["Quiabos", "Abóboras"]
+        },
+        {
+          "id": "4f46d0bf-424e-42b3-aa25-5ae78f9c0406",
+          "name": "Frutas do Sítio",
+          "phone": "(86) 87654-3210",
+          "whatsApp": "(86) 87654-3210",
+          "email": "frutasdositio@gmail.com",
+          "products": ["Laranjas", "Limões", "Tangerinas", "Morangos", "Uvas"]
+        },
+        {
+          "id": "9327598d-d86b-4fbf-b233-53e366b7a52b",
+          "name": "Legumes da Dona Maria",
+          "phone": "(73) 65432-1098",
+          "whatsApp": "(73) 65432-1098",
+          "email": "legumesdonamaria@gmail.com",
+          "products": [
+            "Cenouras",
+            "Beterrabas",
+            "Abóboras",
+            "Pepinos",
+            "Tomates",
+            "Abóboras"
+          ]
+        },
+        {
+          "id": "61930c29-582e-4e8e-9818-2a576d24cc05",
+          "name": "Hortifruti do Joaquim",
+          "phone": "(91) 54321-0987",
+          "whatsApp": "(91) 54321-0987",
+          "email": "hortifrutidojoaquim@gmail.com",
+          "products": ["Tomates", "Pimentões", "Pepinos", "Cebolas"]
+        },
+        {
+          "id": "ec7a55f3-2b8e-4f05-8f15-ade1013cc2bb",
+          "name": "Banca da Dona Maria",
+          "phone": "(99) 98765-4321",
+          "whatsApp": "(99) 98765-4321",
+          "email": "bancadadonamaria@gmail.com",
+          "products": [
+            "Berinjelas",
+            "Tomates",
+            "Pimentões",
+            "Alfaces",
+            "Cenouras"
+          ]
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

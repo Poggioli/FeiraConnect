@@ -1,4 +1,4 @@
-import { Frequency } from "@/services/searchFarmersMarketByCityId";
+import { Frequency } from "@/services/searchFarmersMarketByCitySlug";
 import { clsx, type ClassValue } from "clsx";
 import { getDay } from "date-fns";
 import { twMerge } from "tailwind-merge";
