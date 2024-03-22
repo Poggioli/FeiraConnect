@@ -1,18 +1,18 @@
+import { FarmerMarketLoading } from '@/components/FarmerMarketLoading';
 import { useSearchFarmerMarketBySlug } from '@/services/searchFarmerMarketBySlug';
 import { createFileRoute } from '@tanstack/react-router';
 import { Helmet } from 'react-helmet';
 
-export const Route = createFileRoute('/city/_$city/$neighborhood')({
+export const Route = createFileRoute('/city/_$city/$farmerMarket')({
   component: CityNeighborhood,
 })
 
 function CityNeighborhood() {
-
-  const { neighborhood } = Route.useParams();
-  const { isLoading, data, isSuccess, isError } = useSearchFarmerMarketBySlug(neighborhood);
+  const { farmerMarket } = Route.useParams();
+  const { isLoading, data, isSuccess, isError } = useSearchFarmerMarketBySlug(farmerMarket);
 
   return isLoading ? (
-    null
+    <FarmerMarketLoading />
   ) : (
     <>
       {isSuccess ? (

@@ -14,7 +14,7 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as CityCityImport } from './routes/city.$city'
-import { Route as CityCityNeighborhoodImport } from './routes/city._$city.$neighborhood'
+import { Route as CityCityFarmerMarketImport } from './routes/city._$city.$farmerMarket'
 
 // Create Virtual Routes
 
@@ -32,8 +32,8 @@ const CityCityRoute = CityCityImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const CityCityNeighborhoodRoute = CityCityNeighborhoodImport.update({
-  path: '/city/$city/$neighborhood',
+const CityCityFarmerMarketRoute = CityCityFarmerMarketImport.update({
+  path: '/city/$city/$farmerMarket',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -49,8 +49,8 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CityCityImport
       parentRoute: typeof rootRoute
     }
-    '/city/_$city/$neighborhood': {
-      preLoaderRoute: typeof CityCityNeighborhoodImport
+    '/city/_$city/$farmerMarket': {
+      preLoaderRoute: typeof CityCityFarmerMarketImport
       parentRoute: typeof rootRoute
     }
   }
@@ -61,7 +61,7 @@ declare module '@tanstack/react-router' {
 export const routeTree = rootRoute.addChildren([
   IndexLazyRoute,
   CityCityRoute,
-  CityCityNeighborhoodRoute,
+  CityCityFarmerMarketRoute,
 ])
 
 /* prettier-ignore-end */
