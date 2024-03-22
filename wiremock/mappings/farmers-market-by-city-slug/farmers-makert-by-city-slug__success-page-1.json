@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "GET",
-    "urlPathPattern": "/cities/(.*)/farmers-market",
+    "urlPathPattern": "/cities/([a-z0-9]+(?:-[a-z0-9]+)*)/farmers-market",
     "queryParameters": {
       "page": {
         "equalTo": "1"
