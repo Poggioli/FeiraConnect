@@ -13,10 +13,11 @@ export type PaginationResponse<T> = {
   items: T[]
 }
 
-export type PaginationRequest = {
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type PaginationRequest<T = {}> = {
   perPage: number,
   page: number
-}
+} & T;
 
 export const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL as string,

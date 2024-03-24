@@ -8,6 +8,9 @@
       },
       "perPage": {
         "equalTo": "10"
+      },
+      "q": {
+        "matches": ".+"
       }
     }
   },
