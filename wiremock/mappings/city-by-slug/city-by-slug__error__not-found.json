@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/cities/abadia-de-goias"
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 404,
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
