@@ -72,5 +72,8 @@ export function use{{ pascalCase serviceName }}(
     [result.data]
   );
 
-  return { ...result, dataItems };
+  const isEmpty: boolean = useMemo(() => !dataItems.length, [dataItems]);
+  const isFilled: boolean = useMemo(() => !!dataItems.length, [dataItems]);
+
+  return { ...result, dataItems, isEmpty, isFilled };
 }
