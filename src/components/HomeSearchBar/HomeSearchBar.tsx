@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Popover, PopoverAnchor, PopoverContent } from "@/components/ui/popover";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Link } from "@tanstack/react-router";
 import { Search } from "lucide-react";
 import { FC, useCallback, useRef } from "react";
 import { HomeSearchBarProps } from "./types";
@@ -32,7 +33,7 @@ export const HomeSearchBar: FC<HomeSearchBarProps> = () => {
     }
   } = useHomeSearchBar();
 
-  const lastElementRef = useCallback((node: HTMLParagraphElement) => {
+  const lastElementRef = useCallback((node: HTMLAnchorElement) => {
     if (isLoading) {
       return;
     }
@@ -51,10 +52,6 @@ export const HomeSearchBar: FC<HomeSearchBarProps> = () => {
       observer.current.observe(node);
     }
   }, [fetchNextPage, hasNextPage, isFetching, isLoading]);
-
-  function handleOnClickTryAgain() {
-    refetch();
-  }
 
   return (
     <div className="w-full max-w-screen-sm flex flex-row gap-1">
@@ -78,14 +75,18 @@ export const HomeSearchBar: FC<HomeSearchBarProps> = () => {
           {!isLoading && isSuccess && isFilled ? (
             <ScrollArea className="w-full h-[calc(var(--radix-popover-content-available-height)-3rem)] overflow-hidden" >
               <div className="flex flex-col p-1">
-                {dataItems.map((city) => (
-                  <p
-                    key={city.id}
+                {dataItems.map(({ name, slug, id }) => (
+                  <Link
+                    to="/city/$city"
+                    params={{
+                      city: slug
+                    }}
+                    key={id}
                     ref={lastElementRef}
                     className="p-2 leading-7 text-muted-foreground hover:bg-muted hover:text-primary rounded-sm"
                   >
-                    {city.name}
-                  </p>
+                    {name}
+                  </Link>
                 ))}
                 {isFetching ? (
                   Array.from(Array(3).keys()).map((item) =>
@@ -105,7 +106,7 @@ export const HomeSearchBar: FC<HomeSearchBarProps> = () => {
           {!isFetching && isError ? (
             <div className="text-center w-full flex flex-col gap-1 justify-center items-center">
               <p className="leading-6 text-muted-foreground">Aconteceu algum erro indo para feira...</p>
-              <Button size="default" variant="link" onClick={handleOnClickTryAgain}>Tentar novamente</Button>
+              <Button size="default" variant="link" onClick={() => refetch()}>Tentar novamente</Button>
             </div>
           ) : null}
         </PopoverContent>
