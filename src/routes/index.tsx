@@ -1,3 +1,4 @@
+import PeopleWithDog from "@/assets/people-with-dog.svg?react";
 import { HomeSearchBar } from "@/components/HomeSearchBar";
 import { TitlePage } from "@/components/TitlePage";
 import { createFileRoute } from "@tanstack/react-router";
@@ -15,6 +16,7 @@ function Index() {
     <div className="p-6 md:p-12 h-full w-full flex flex-col gap-4 justify-center items-center max-w-screen-md m-auto">
       <TitlePage>Vamos a feira</TitlePage>
       <HomeSearchBar />
+      <PeopleWithDog className="w-full max-w-96 fixed opacity-15 -z-50" />
     </div>
   )
 }
