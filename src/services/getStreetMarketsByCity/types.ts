@@ -15,6 +15,7 @@ export type GetStreetMarketsByCity = {
   id: string;
   name: string;
   slug: string;
+  neighborhood: string;
   apperture: number;
   closure: number;
   weekday: Weekday;

@@ -1,0 +1,86 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/street-markets/(.+)",
+    "queryParameters": {
+      "page": {
+        "equalTo": "2"
+      },
+      "perPage": {
+        "equalTo": "10"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 200,
+    "jsonBody": {
+      "metadata": {
+        "currentPage": 1,
+        "itemsPerPage": 10,
+        "totalPages": 2,
+        "totalItems": 16,
+        "isLastPage": true
+      },
+      "items": [
+        {
+          "id": "d9f32d10-ae7a-4f1d-b9cc-414a1553089b",
+          "name": "Feira do Livro",
+          "slug": "feira-do-livro",
+          "apperture": 9,
+          "closure": 17,
+          "weekday": "thursday",
+          "neighborhood": "Centro"
+        },
+        {
+          "id": "38d91c72-3037-4486-b82f-d7f88b46dbf5",
+          "name": "Feira de Frutas",
+          "slug": "feira-de-frutas",
+          "apperture": 8,
+          "closure": 18,
+          "weekday": "friday",
+          "neighborhood": "Tatuapé"
+        },
+        {
+          "id": "31e15139-3a7f-43eb-b650-6951b60b8a25",
+          "name": "Feira de Flores",
+          "slug": "feira-de-flores",
+          "apperture": 10,
+          "closure": 16,
+          "weekday": "saturday",
+          "neighborhood": "Vila Leopoldina"
+        },
+        {
+          "id": "d547a261-4ae2-4c7e-81a4-6c21e131b130",
+          "name": "Feira de Arte Urbana",
+          "slug": "feira-de-arte-urbana",
+          "apperture": 7,
+          "closure": 15,
+          "weekday": "sunday",
+          "neighborhood": "Pinheiros"
+        },
+        {
+          "id": "e153df3c-53c1-45e8-8b61-d03657c21b5f",
+          "name": "Feira de Moda",
+          "slug": "feira-de-moda",
+          "apperture": 12,
+          "closure": 20,
+          "weekday": "monday",
+          "neighborhood": "Itaim Bibi"
+        },
+        {
+          "id": "fe728a1e-81a1-44f3-a8d8-24d7ad22811e",
+          "name": "Feira de Produtos Regionais",
+          "slug": "feira-de-produtos-regionais",
+          "apperture": 10,
+          "closure": 18,
+          "weekday": "tuesday",
+          "neighborhood": "Mooca"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/street-markets/(.+)",
+    "queryParameters": {
+      "page": {
+        "equalTo": "1"
+      },
+      "perPage": {
+        "equalTo": "10"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 200,
+    "jsonBody": {
+      "metadata": {
+        "currentPage": 1,
+        "itemsPerPage": 10,
+        "totalPages": 2,
+        "totalItems": 16,
+        "isLastPage": false
+      },
+      "items": [
+        {
+          "id": "f446b7c3-8c8e-4f38-bb18-bdc27c026ab1",
+          "name": "Feira do Agricultor",
+          "slug": "feira-do-agricultor",
+          "apperture": 8,
+          "closure": 16,
+          "weekday": "monday",
+          "neighborhood": "Centro"
+        },
+        {
+          "id": "f1e36d44-3e44-4d3d-96b3-f91d4e53f81d",
+          "name": "Feira Orgânica",
+          "slug": "feira-organica",
+          "apperture": 9,
+          "closure": 17,
+          "weekday": "tuesday",
+          "neighborhood": "Jardim Botânico"
+        },
+        {
+          "id": "20730927-7fc5-4a65-98c8-dfa601b1eac0",
+          "name": "Feira de Artesanato",
+          "slug": "feira-de-artesanato",
+          "apperture": 7,
+          "closure": 15,
+          "weekday": "wednesday",
+          "neighborhood": "Vila Madalena"
+        },
+        {
+          "id": "f4d9c04b-f1c6-4776-83a2-0cf9b2f23950",
+          "name": "Feira Gastronômica",
+          "slug": "feira-gastronomica",
+          "apperture": 10,
+          "closure": 18,
+          "weekday": "thursday",
+          "neighborhood": "Itaim Bibi"
+        },
+        {
+          "id": "cb5985d4-02d0-4e08-b95a-28bbd846cb9b",
+          "name": "Feira de Arte e Cultura",
+          "slug": "feira-de-arte-e-cultura",
+          "apperture": 11,
+          "closure": 19,
+          "weekday": "friday",
+          "neighborhood": "Pinheiros"
+        },
+        {
+          "id": "28e560f2-bb85-4c25-9021-dcf6a004de15",
+          "name": "Feira de Antiguidades",
+          "slug": "feira-de-antiguidades",
+          "apperture": 6,
+          "closure": 14,
+          "weekday": "saturday",
+          "neighborhood": "Mooca"
+        },
+        {
+          "id": "01a3836f-0a7d-4f91-8aeb-c71b348bb146",
+          "name": "Feira do Produtor",
+          "slug": "feira-do-produtor",
+          "apperture": 8,
+          "closure": 18,
+          "weekday": "sunday",
+          "neighborhood": "Campo Belo"
+        },
+        {
+          "id": "b6e66d50-f0ec-4371-9fa1-2ed8283c9b91",
+          "name": "Feira de Roupas",
+          "slug": "feira-de-roupas",
+          "apperture": 9,
+          "closure": 17,
+          "weekday": "monday",
+          "neighborhood": "Santo Amaro"
+        },
+        {
+          "id": "b5fb1b87-2c33-49cb-a151-d1eb3934b7b5",
+          "name": "Feira de Doces",
+          "slug": "feira-de-doces",
+          "apperture": 7,
+          "closure": 15,
+          "weekday": "tuesday",
+          "neighborhood": "Moema"
+        },
+        {
+          "id": "46aa261f-78b4-44d4-9cf2-4a565d4d2f6d",
+          "name": "Feira de Plantas",
+          "slug": "feira-de-plantas",
+          "apperture": 10,
+          "closure": 16,
+          "weekday": "wednesday",
+          "neighborhood": "Vila Mariana"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
