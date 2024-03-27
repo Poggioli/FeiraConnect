@@ -4,9 +4,9 @@
   height="2134.180327868852px">
   <g id="Master/Compositions/Stuff To Do" stroke="none" stroke-width="1" fill="none"
     fill-rule="evenodd" blush:i="0">
-    <ellipse id="Oval" fill="hsl(var(--warning))" opacity=".5" style="mix-blend-mode:overlay" cx="1296.5"
+    <ellipse id="Oval" fill="hsl(var(--warning))" opacity=".5" cx="1296.5"
       cy="1184" rx="924.5" ry="924" blush:i="0.0" />
-    <ellipse id="Oval" fill="hsl(var(--info))" opacity=".5" style="mix-blend-mode:overlay" cx="2574.5"
+    <ellipse id="Oval" fill="hsl(var(--info))" opacity=".5" cx="2574.5"
       cy="1184" rx="924.5" ry="924" blush:i="0.1" />
     <g transform="translate(557.000000, 148.000000) scale(2.693359375 2.693359375)"
       blush:width="2758" blush:height="2068.5" id="Master/Doodles/Messy"
