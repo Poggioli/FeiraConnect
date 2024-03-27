@@ -19,7 +19,7 @@ export const HeaderCityPage: FC = () => {
   }
 
   return isFetching ? (
-    <Skeleton className="h-10 w-32" />
+    <Skeleton className="min-h-10 w-32" />
   ) : (
     <TitlePage>{data?.name}</TitlePage>
   );
