@@ -49,10 +49,10 @@ export const StreetMarketsList: FC = () => {
     <>
       {isSuccess || isFetching ? (
         <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {isSuccess && isFilled ? (
+          {isSuccess && isFilled && !isLoading ? (
             dataItems.map((item) => <StreetMarketCard key={item.id} ref={lastElementRef} {...item} />)
           ) : null}
-          {isFetching ? (
+          {isFetching || isLoading ? (
             Array.from(Array(10).keys()).map((i) => <StreetMarketCardSkeleton key={i} />)
           ) : null}
         </div>

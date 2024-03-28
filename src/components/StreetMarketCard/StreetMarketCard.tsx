@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { FC, HTMLAttributes, forwardRef } from "react";
 import { StreetMarketCardProps } from "./types";
 import { useStreetMarketCard } from "./useStreetMarketCard";
-import { Skeleton } from "../ui/skeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export const StreetMarketCard = forwardRef<
   HTMLDivElement,

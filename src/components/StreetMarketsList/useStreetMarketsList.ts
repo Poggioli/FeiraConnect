@@ -1,23 +1,25 @@
-import useObserveQuery from "@/hooks/useObserveQuery";
 import { createGetCityBySlugQueryKey } from "@/services/getCityBySlug";
 import { useGetStreetMarketsByCity } from "@/services/getStreetMarketsByCity";
+import { useIsFetching } from "@tanstack/react-query";
 import { useParams } from "@tanstack/react-router";
 import { useMemo } from "react";
 
 export function useStreetMarketsList() {
   const { city } = useParams({ from: "/city/$city" });
-  const { isFetching: isFetchingStreetMarkets, ...streetMarketsByCityService } =
+  const { isLoading: isLoadingStreetMarkets, ...streetMarketsByCityService } =
     useGetStreetMarketsByCity({ city });
-  const { isFetching: isFetchingCity } = useObserveQuery(
-    createGetCityBySlugQueryKey(city)
-  );
+  const isLoadingCity = useIsFetching({
+    queryKey: createGetCityBySlugQueryKey(city),
+  });
 
-  const isFetching: boolean = useMemo(
-    () => isFetchingCity || isFetchingStreetMarkets,
-    [isFetchingCity, isFetchingStreetMarkets]
+  console.log({ isLoadingCity })
+
+  const isLoading: boolean = useMemo(
+    () => !!isLoadingCity || isLoadingStreetMarkets,
+    [isLoadingStreetMarkets, isLoadingCity]
   );
 
   return {
-    streetMarketsByCityService: { isFetching, ...streetMarketsByCityService },
+    streetMarketsByCityService: { ...streetMarketsByCityService, isLoading },
   };
 }
