@@ -1,0 +1,53 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/street-markets/(.+)",
+    "queryParameters": {
+      "page": {
+        "equalTo": "1"
+      },
+      "perPage": {
+        "equalTo": "10"
+      },
+      "weekday": {
+        "equalTo": "saturday"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 200,
+    "jsonBody": {
+      "metadata": {
+        "currentPage": 1,
+        "itemsPerPage": 10,
+        "totalPages": 1,
+        "totalItems": 2,
+        "isLastPage": true
+      },
+      "items": [
+        {
+          "id": "28e560f2-bb85-4c25-9021-dcf6a004de15",
+          "name": "Feira de Antiguidades",
+          "slug": "feira-de-antiguidades",
+          "apperture": 6,
+          "closure": 14,
+          "weekday": "saturday",
+          "neighborhood": "Mooca"
+        },
+        {
+          "id": "31e15139-3a7f-43eb-b650-6951b60b8a25",
+          "name": "Feira de Flores",
+          "slug": "feira-de-flores",
+          "apperture": 10,
+          "closure": 16,
+          "weekday": "saturday",
+          "neighborhood": "Vila Leopoldina"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

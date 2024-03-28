@@ -8,6 +8,12 @@
       },
       "perPage": {
         "equalTo": "10"
+      },
+      "weekday" : {
+        "absent" : true
+      },
+      "hour" : {
+        "absent" : true
       }
     }
   },

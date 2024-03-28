@@ -1,0 +1,53 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/street-markets/(.+)",
+    "queryParameters": {
+      "page": {
+        "equalTo": "1"
+      },
+      "perPage": {
+        "equalTo": "10"
+      },
+      "weekday": {
+        "equalTo": "thursday"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 200,
+    "jsonBody": {
+      "metadata": {
+        "currentPage": 1,
+        "itemsPerPage": 10,
+        "totalPages": 1,
+        "totalItems": 2,
+        "isLastPage": true
+      },
+      "items": [
+        {
+          "id": "f4d9c04b-f1c6-4776-83a2-0cf9b2f23950",
+          "name": "Feira Gastronômica",
+          "slug": "feira-gastronomica",
+          "apperture": 10,
+          "closure": 18,
+          "weekday": "thursday",
+          "neighborhood": "Itaim Bibi"
+        },
+        {
+          "id": "d9f32d10-ae7a-4f1d-b9cc-414a1553089b",
+          "name": "Feira do Livro",
+          "slug": "feira-do-livro",
+          "apperture": 9,
+          "closure": 17,
+          "weekday": "thursday",
+          "neighborhood": "Centro"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

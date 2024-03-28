@@ -1,13 +1,16 @@
 {
   "request": {
     "method": "GET",
-    "urlPathPattern": "/street-markets/abadiania",
+    "urlPathPattern": "/street-markets/(.+)",
     "queryParameters": {
       "page": {
         "equalTo": "1"
       },
       "perPage": {
         "equalTo": "10"
+      },
+      "weekday": {
+        "equalTo": "tuesday"
       }
     }
   },

@@ -1,0 +1,53 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/street-markets/(.+)",
+    "queryParameters": {
+      "page": {
+        "equalTo": "1"
+      },
+      "perPage": {
+        "equalTo": "10"
+      },
+      "weekday": {
+        "equalTo": "sunday"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 200,
+    "jsonBody": {
+      "metadata": {
+        "currentPage": 1,
+        "itemsPerPage": 10,
+        "totalPages": 1,
+        "totalItems": 2,
+        "isLastPage": true
+      },
+      "items": [
+        {
+          "id": "01a3836f-0a7d-4f91-8aeb-c71b348bb146",
+          "name": "Feira do Produtor",
+          "slug": "feira-do-produtor",
+          "apperture": 8,
+          "closure": 18,
+          "weekday": "sunday",
+          "neighborhood": "Campo Belo"
+        },
+        {
+          "id": "d547a261-4ae2-4c7e-81a4-6c21e131b130",
+          "name": "Feira de Arte Urbana",
+          "slug": "feira-de-arte-urbana",
+          "apperture": 7,
+          "closure": 15,
+          "weekday": "sunday",
+          "neighborhood": "Pinheiros"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

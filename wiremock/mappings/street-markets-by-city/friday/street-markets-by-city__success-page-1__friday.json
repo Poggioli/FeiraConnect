@@ -1,0 +1,53 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/street-markets/(.+)",
+    "queryParameters": {
+      "page": {
+        "equalTo": "1"
+      },
+      "perPage": {
+        "equalTo": "10"
+      },
+      "weekday": {
+        "equalTo": "friday"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 200,
+    "jsonBody": {
+      "metadata": {
+        "currentPage": 1,
+        "itemsPerPage": 10,
+        "totalPages": 1,
+        "totalItems": 2,
+        "isLastPage": true
+      },
+      "items": [
+        {
+          "id": "cb5985d4-02d0-4e08-b95a-28bbd846cb9b",
+          "name": "Feira de Arte e Cultura",
+          "slug": "feira-de-arte-e-cultura",
+          "apperture": 11,
+          "closure": 19,
+          "weekday": "friday",
+          "neighborhood": "Pinheiros"
+        },
+        {
+          "id": "38d91c72-3037-4486-b82f-d7f88b46dbf5",
+          "name": "Feira de Frutas",
+          "slug": "feira-de-frutas",
+          "apperture": 8,
+          "closure": 18,
+          "weekday": "friday",
+          "neighborhood": "Tatuapé"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/street-markets/(.+)",
+    "queryParameters": {
+      "page": {
+        "equalTo": "1"
+      },
+      "perPage": {
+        "equalTo": "10"
+      },
+      "weekday": {
+        "equalTo": "wednesday"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 200,
+    "jsonBody": {
+      "metadata": {
+        "currentPage": 1,
+        "itemsPerPage": 10,
+        "totalPages": 1,
+        "totalItems": 2,
+        "isLastPage": true
+      },
+      "items": [
+        {
+          "id": "20730927-7fc5-4a65-98c8-dfa601b1eac0",
+          "name": "Feira de Artesanato",
+          "slug": "feira-de-artesanato",
+          "apperture": 7,
+          "closure": 15,
+          "weekday": "wednesday",
+          "neighborhood": "Vila Madalena"
+        },
+        {
+          "id": "46aa261f-78b4-44d4-9cf2-4a565d4d2f6d",
+          "name": "Feira de Plantas",
+          "slug": "feira-de-plantas",
+          "apperture": 10,
+          "closure": 16,
+          "weekday": "wednesday",
+          "neighborhood": "Vila Mariana"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
