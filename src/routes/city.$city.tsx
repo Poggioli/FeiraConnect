@@ -2,11 +2,17 @@ import { HeaderCityPage } from "@/components/HeaderCityPage";
 import { PageNotFound } from "@/components/PageNotFound";
 import { StreetMarketBackground } from "@/components/StreetMarketBackground";
 import { StreetMarketsList } from "@/components/StreetMarketsList";
+import { Weekday } from "@/services/getStreetMarketsByCity";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/city/$city")({
   component: City,
-  notFoundComponent: () => <PageNotFound />
+  notFoundComponent: () => <PageNotFound />,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  validateSearch: (search: Record<string, any>): { wd?: Weekday, open?: boolean } => ({
+    wd: search.wd,
+    open: search.open
+  })
 })
 
 function City() {
