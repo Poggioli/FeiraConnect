@@ -6,10 +6,9 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Link } from "@tanstack/react-router";
 import { Search } from "lucide-react";
 import { FC, useCallback, useRef } from "react";
-import { HomeSearchBarProps } from "./types";
 import { useHomeSearchBar } from "./useHomeSearchBar";
 
-export const HomeSearchBar: FC<HomeSearchBarProps> = () => {
+export const HomeSearchBar: FC = () => {
 
   const observer = useRef<IntersectionObserver>();
   const {

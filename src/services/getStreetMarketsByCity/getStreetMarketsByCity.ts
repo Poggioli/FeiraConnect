@@ -12,7 +12,7 @@ import {
   UseGetStreetMarketsByCityOptions,
 } from "./types";
 
-const url = 'street-markets' as const
+const url = "street-markets" as const;
 
 async function fetchGetStreetMarketsByCity(
   { page, perPage, city, ...restParams }: GetStreetMarketsByCityParams,
@@ -29,7 +29,9 @@ async function fetchGetStreetMarketsByCity(
 
 const queryKey = "getStreetMarketsByCity" as const;
 
-export function createUseGetStreetMarketsByCityQueryKey(query: GetStreetMarketsByCityQuery): GetStreetMarketsByCitySlugQueryKey {
+export function createUseGetStreetMarketsByCityQueryKey(
+  query: GetStreetMarketsByCityQuery
+): GetStreetMarketsByCitySlugQueryKey {
   return [queryKey, query];
 }
 
@@ -52,7 +54,7 @@ export function useGetStreetMarketsByCity(
         {
           page: pageParam,
           perPage: DEFAULT_PER_PAGE,
-          ...query
+          ...query,
         },
         {
           signal,
@@ -67,10 +69,10 @@ export function useGetStreetMarketsByCity(
   const dataItems: GetStreetMarketsByCity[] = useMemo(
     () =>
       (result.data?.pages || []).reduce(
-        (acc: GetStreetMarketsByCity[], page: GetStreetMarketsByCityResponse) => [
-          ...acc,
-          ...page.items,
-        ],
+        (
+          acc: GetStreetMarketsByCity[],
+          page: GetStreetMarketsByCityResponse
+        ) => [...acc, ...page.items],
         []
       ),
     [result.data]

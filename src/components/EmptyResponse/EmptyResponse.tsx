@@ -1,6 +1,6 @@
-import { HTMLAttributes, forwardRef } from "react";
 import PeopleLookingAtNothing from '@/assets/people-looking-at-nothing.svg?react';
 import { cn } from "@/lib/utils";
+import { HTMLAttributes, forwardRef } from "react";
 
 export const EmptyResponse = forwardRef<
   HTMLDivElement,

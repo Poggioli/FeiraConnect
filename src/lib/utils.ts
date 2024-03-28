@@ -7,5 +7,5 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function isEnterKey(event: KeyboardEvent<HTMLElement>): boolean {
-  return event.key === "Enter"
+  return event.key === "Enter";
 }

@@ -6,8 +6,8 @@ export const Route = createRootRoute({
     <>
       <Outlet />
       {import.meta.env.VITE_LOCAL_ENV ? (
-          <TanStackRouterDevtools />
-        ) : null}
+        <TanStackRouterDevtools />
+      ) : null}
     </>
   ),
 })

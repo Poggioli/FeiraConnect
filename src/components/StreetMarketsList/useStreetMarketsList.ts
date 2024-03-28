@@ -12,8 +12,6 @@ export function useStreetMarketsList() {
     queryKey: createGetCityBySlugQueryKey(city),
   });
 
-  console.log({ isLoadingCity })
-
   const isLoading: boolean = useMemo(
     () => !!isLoadingCity || isLoadingStreetMarkets,
     [isLoadingStreetMarkets, isLoadingCity]

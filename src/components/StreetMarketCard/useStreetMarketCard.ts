@@ -24,7 +24,8 @@ export function useStreetMarketCard({
 
   const formatedName = name.charAt(0).toUpperCase() + name.slice(1);
 
-  const formatedNeighborhood = neighborhood.charAt(0).toUpperCase() + neighborhood.slice(1);
+  const formatedNeighborhood =
+    neighborhood.charAt(0).toUpperCase() + neighborhood.slice(1);
 
   const timeFormated = `${formatHour(apperture)}h - ${formatHour(closure)}h`;
 

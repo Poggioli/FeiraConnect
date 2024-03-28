@@ -1,10 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import { FC, HTMLAttributes, forwardRef } from "react";
 import { StreetMarketCardProps } from "./types";
 import { useStreetMarketCard } from "./useStreetMarketCard";
-import { Skeleton } from "@/components/ui/skeleton";
 
 export const StreetMarketCard = forwardRef<
   HTMLDivElement,

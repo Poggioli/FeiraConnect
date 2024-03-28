@@ -10,7 +10,7 @@ import {
   UseGetCitiesOptions,
 } from "./types";
 
-const url = 'cities' as const
+const url = "cities" as const;
 
 async function fetchGetCities(
   { page, perPage, q }: GetCitiesParams,
@@ -18,23 +18,19 @@ async function fetchGetCities(
   config: AxiosRequestConfig<any> | undefined = {}
 ): Promise<GetCitiesResponse> {
   const params = qs.stringify({ page, perPage, q });
-  const res = await api.get<GetCitiesResponse>(
-    `${url}?${params}`,
-    config
-  );
+  const res = await api.get<GetCitiesResponse>(`${url}?${params}`, config);
   return res.data;
 }
 
 const queryKey = "getCities" as const;
 
-export function createUseGetCitiesQueryKey(query: string): ["getCities", string] {
+export function createUseGetCitiesQueryKey(
+  query: string
+): ["getCities", string] {
   return [queryKey, query];
 }
 
-export function useGetCities(
-  query: string,
-  options?: UseGetCitiesOptions
-) {
+export function useGetCities(query: string, options?: UseGetCitiesOptions) {
   const result = useInfiniteQuery<
     GetCitiesResponse,
     AxiosError,
@@ -50,7 +46,7 @@ export function useGetCities(
         {
           page: pageParam,
           perPage: DEFAULT_PER_PAGE,
-          q: query
+          q: query,
         },
         {
           signal,
@@ -65,10 +61,7 @@ export function useGetCities(
   const dataItems: GetCities[] = useMemo(
     () =>
       (result.data?.pages || []).reduce(
-        (acc: GetCities[], page: GetCitiesResponse) => [
-          ...acc,
-          ...page.items,
-        ],
+        (acc: GetCities[], page: GetCitiesResponse) => [...acc, ...page.items],
         []
       ),
     [result.data]

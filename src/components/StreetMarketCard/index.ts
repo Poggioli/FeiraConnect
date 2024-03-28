@@ -1,3 +1,3 @@
 export * from "./StreetMarketCard";
-export * from "./useStreetMarketCard";
 export * from "./types";
+export * from "./useStreetMarketCard";

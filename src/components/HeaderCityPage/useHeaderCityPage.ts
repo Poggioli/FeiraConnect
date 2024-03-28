@@ -11,6 +11,6 @@ export function useHeaderCityPage() {
   });
 
   return {
-    cityService
+    cityService,
   };
 }

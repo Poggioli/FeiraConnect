@@ -1,7 +1,7 @@
 import PeoplePaper from '@/assets/people-paper.svg?react';
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { HTMLAttributes, forwardRef } from "react";
-import { Button } from "@/components/ui/button";
 import { TryAgainProps } from "./types";
 
 export const TryAgain = forwardRef<
