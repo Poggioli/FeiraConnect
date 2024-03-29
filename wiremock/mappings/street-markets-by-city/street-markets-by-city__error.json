@@ -1,13 +1,18 @@
 {
   "request": {
     "method": "GET",
-    "urlPathPattern": "/street-markets/abadia-dos-dourados",
+    "urlPathPattern": "/(.+)/street-markets",
     "queryParameters": {
       "page": {
         "equalTo": "1"
       },
       "perPage": {
         "equalTo": "10"
+      }
+    },
+    "headers": {
+      "slug/street-markets": {
+        "equalTo": "error"
       }
     }
   },

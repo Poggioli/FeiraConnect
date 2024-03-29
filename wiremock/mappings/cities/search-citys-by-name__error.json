@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "GET",
-    "urlPathPattern": "/(.+)/street-markets",
+    "urlPath": "/cities",
     "queryParameters": {
       "page": {
         "equalTo": "1"
@@ -11,8 +11,8 @@
       }
     },
     "headers": {
-      "slug/street-markets": {
-        "equalTo": "empty"
+      "cities": {
+        "equalTo": "error"
       }
     }
   },
