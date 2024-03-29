@@ -7,6 +7,8 @@ import { Link } from "@tanstack/react-router";
 import { Search } from "lucide-react";
 import { FC, useCallback, useRef } from "react";
 import { useHomeSearchBar } from "./useHomeSearchBar";
+import { EmptyResponse } from "../EmptyResponse";
+import { TryAgain } from "../TryAgain";
 
 export const HomeSearchBar: FC = () => {
 
@@ -98,16 +100,11 @@ export const HomeSearchBar: FC = () => {
             </ScrollArea>
           ) : null}
           {!isLoading && isSuccess && isEmpty ? (
-            <div className="text-center w-full flex flex-col gap-1 justify-center items-center">
-              <p className="leading-6 text-muted-foreground">Não encontramos essa cidade que você busca</p>
-            </div>
+            <EmptyResponse className="h-full">
+              Não encontramos nenhuma cidade com este nome, entre em contato conosco.
+            </EmptyResponse>
           ) : null}
-          {!isFetching && isError ? (
-            <div className="text-center w-full flex flex-col gap-1 justify-center items-center">
-              <p className="leading-6 text-muted-foreground">Aconteceu algum erro indo para feira...</p>
-              <Button size="default" variant="link" onClick={() => refetch()}>Tentar novamente</Button>
-            </div>
-          ) : null}
+          {!isLoading && isError ? (<TryAgain refetch={refetch} className="h-full" />) : null}
         </PopoverContent>
       </Popover>
       <Button

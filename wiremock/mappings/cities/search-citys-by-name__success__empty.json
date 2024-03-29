@@ -2,16 +2,8 @@
   "request": {
     "method": "GET",
     "urlPath": "/cities",
-    "queryParameters": {
-      "page": {
-        "equalTo": "1"
-      },
-      "perPage": {
-        "equalTo": "10"
-      }
-    },
     "headers": {
-      "cities": {
+      "Cities": {
         "equalTo": "empty"
       }
     }

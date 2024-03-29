@@ -61,8 +61,8 @@ export const StreetMarketsList: FC = () => {
           </div>
         </>
       ) : null}
-      {!isLoading && isSuccess && isEmpty ? (<EmptyResponse className="h-full" />) : null}
-      {!isLoading && isError ? (<TryAgain refetch={refetch} className="h-full" />) : null}
+      {!isLoading && !isFetching && isSuccess && isEmpty ? (<EmptyResponse className="h-full" />) : null}
+      {!isLoading && !isFetching && isError ? (<TryAgain refetch={refetch} className="h-full" />) : null}
     </>
   );
 };

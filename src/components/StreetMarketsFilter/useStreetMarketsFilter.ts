@@ -32,8 +32,7 @@ export function useStreetMarketsFilter() {
       search: {
         open: isNowOpen,
         wd: weekDay,
-      },
-      replace: true,
+      }
     });
   }
 

@@ -12,6 +12,11 @@
       "q": {
         "matches": ".+"
       }
+    },
+    "headers": {
+      "Cities": {
+        "absent": true
+      }
     }
   },
   "response": {

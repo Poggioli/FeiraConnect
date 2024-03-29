@@ -21,7 +21,7 @@ async function fetchGetStreetMarketsByCity(
 ): Promise<GetStreetMarketsByCityResponse> {
   const params = qs.stringify({ page, perPage, ...restParams });
   const res = await api.get<GetStreetMarketsByCityResponse>(
-    `${url}/${city}?${params}`,
+    `${city}/${url}?${params}`,
     config
   );
   return res.data;
