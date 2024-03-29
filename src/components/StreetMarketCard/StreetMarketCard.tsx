@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardDescription, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
+import { Link } from "@tanstack/react-router";
 import { FC, HTMLAttributes, forwardRef } from "react";
 import { StreetMarketCardProps } from "./types";
 import { useStreetMarketCard } from "./useStreetMarketCard";
@@ -15,6 +16,7 @@ export const StreetMarketCard = forwardRef<
   apperture,
   closure,
   weekday,
+  slug,
   ...props
 }, ref) => {
   const {
@@ -31,14 +33,22 @@ export const StreetMarketCard = forwardRef<
   });
 
   return (
-    <Card {...props} className={cn("py-4 px-5 w-full", props.className)} ref={ref}>
-      <CardTitle>{formatedName}</CardTitle>
-      <CardDescription>{formatedNeighborhood}</CardDescription>
-      <div className="mt-2 flex flex-row wrap gap-2">
-        <Badge variant="outline">{weekdayFormated}</Badge>
-        <Badge variant="outline">{timeFormated}</Badge>
-      </div>
-    </Card>
+    <Link
+      from="/city/$city"
+      to="/city/$city/$streetMarket"
+      params={{
+        streetMarket: slug
+      }}
+    >
+      <Card {...props} className={cn("py-4 px-5 w-full", props.className)} ref={ref}>
+        <CardTitle>{formatedName}</CardTitle>
+        <CardDescription>{formatedNeighborhood}</CardDescription>
+        <div className="mt-2 flex flex-row wrap gap-2">
+          <Badge variant="outline">{weekdayFormated}</Badge>
+          <Badge variant="outline">{timeFormated}</Badge>
+        </div>
+      </Card>
+    </Link>
   );
 });
 

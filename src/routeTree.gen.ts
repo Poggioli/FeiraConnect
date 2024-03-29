@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as IndexImport } from './routes/index'
 import { Route as CityCityImport } from './routes/city.$city'
+import { Route as CityCityStreetMarketImport } from './routes/city._$city.$streetMarket'
 
 // Create/Update Routes
 
@@ -23,6 +24,11 @@ const IndexRoute = IndexImport.update({
 
 const CityCityRoute = CityCityImport.update({
   path: '/city/$city',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CityCityStreetMarketRoute = CityCityStreetMarketImport.update({
+  path: '/city/$city/$streetMarket',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -38,11 +44,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CityCityImport
       parentRoute: typeof rootRoute
     }
+    '/city/_$city/$streetMarket': {
+      preLoaderRoute: typeof CityCityStreetMarketImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
 // Create and export the route tree
 
-export const routeTree = rootRoute.addChildren([IndexRoute, CityCityRoute])
+export const routeTree = rootRoute.addChildren([
+  IndexRoute,
+  CityCityRoute,
+  CityCityStreetMarketRoute,
+])
 
 /* prettier-ignore-end */
