@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/street-markets/(.+)",
+    "headers": {
+      "street-markets/slug": {
+        "equalTo": "error-not-found"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 404,
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

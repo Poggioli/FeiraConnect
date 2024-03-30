@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/street-markets/(.+)"
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 200,
+    "jsonBody": {
+      "id": "f1e36d44-3e44-4d3d-96b3-f91d4e53f81d",
+      "name": "Feira Orgânica",
+      "slug": "feira-organica",
+      "apperture": 9,
+      "closure": 17,
+      "weekday": "tuesday",
+      "neighborhood": "Jardim Botânico"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
