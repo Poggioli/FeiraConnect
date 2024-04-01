@@ -1,0 +1,36 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/(.+)/exhibitors",
+    "queryParameters": {
+      "page": {
+        "equalTo": "1"
+      },
+      "perPage": {
+        "equalTo": "10"
+      }
+    },
+    "headers": {
+      "slug/exhibitors": {
+        "equalTo": "empty"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 200,
+    "jsonBody": {
+      "metadata": {
+        "currentPage": 1,
+        "itemsPerPage": 10,
+        "totalPages": 1,
+        "totalItems": 0,
+        "isLastPage": true
+      },
+      "items": []
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

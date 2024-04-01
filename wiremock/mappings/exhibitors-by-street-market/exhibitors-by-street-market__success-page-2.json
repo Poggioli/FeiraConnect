@@ -1,0 +1,62 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/(.+)/exhibitors",
+    "queryParameters": {
+      "page": {
+        "equalTo": "2"
+      },
+      "perPage": {
+        "equalTo": "10"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 200,
+    "jsonBody": {
+      "metadata": {
+        "currentPage": 1,
+        "itemsPerPage": 10,
+        "totalPages": 2,
+        "totalItems": 16,
+        "isLastPage": true
+      },
+      "items": [
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440011",
+          "name": "Marta das Flores",
+          "slug": "marta-das-flores"
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440012",
+          "name": "José do Pão",
+          "slug": "jose-do-pao"
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440013",
+          "name": "Carolina dos Queijos",
+          "slug": "carolina-dos-queijos"
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440014",
+          "name": "Francisco das Azeitonas",
+          "slug": "francisco-das-azeitonas"
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440015",
+          "name": "Beatriz dos Legumes",
+          "slug": "beatriz-dos-legumes"
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440016",
+          "name": "Manuel das Carnes",
+          "slug": "manuel-das-carnes"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

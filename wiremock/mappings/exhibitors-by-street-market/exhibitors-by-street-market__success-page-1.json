@@ -1,0 +1,82 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/(.+)/exhibitors",
+    "queryParameters": {
+      "page": {
+        "equalTo": "1"
+      },
+      "perPage": {
+        "equalTo": "10"
+      }
+    }
+  },
+  "response": {
+    "fixedDelayMilliseconds": 2000,
+    "status": 200,
+    "jsonBody": {
+      "metadata": {
+        "currentPage": 1,
+        "itemsPerPage": 10,
+        "totalPages": 2,
+        "totalItems": 16,
+        "isLastPage": false
+      },
+      "items": [
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440001",
+          "name": "Maria da Fruta",
+          "slug": "maria-da-fruta"
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440002",
+          "name": "João do Milho",
+          "slug": "joao-do-milho"
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440003",
+          "name": "Ana das Verduras",
+          "slug": "ana-das-verduras"
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440004",
+          "name": "Pedro da Banca",
+          "slug": "pedro-da-banca"
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440005",
+          "name": "Rita das Ervas",
+          "slug": "rita-das-ervas"
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440006",
+          "name": "Carlos do Pomar",
+          "slug": "carlos-do-pomar"
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440007",
+          "name": "Sofia da Horta",
+          "slug": "sofia-da-horta"
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440008",
+          "name": "Luís do Mercado",
+          "slug": "luis-do-mercado"
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440009",
+          "name": "Fernanda das Especiarias",
+          "slug": "fernanda-das-especiarias"
+        },
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440010",
+          "name": "António das Frutas Tropicais",
+          "slug": "antonio-das-frutas-tropicais"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
