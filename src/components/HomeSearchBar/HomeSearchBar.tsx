@@ -100,9 +100,12 @@ export const HomeSearchBar: FC = () => {
             </ScrollArea>
           ) : null}
           {!isLoading && isSuccess && isEmpty ? (
-            <EmptyResponse className="h-full">
-              Não encontramos nenhuma cidade com este nome, entre em contato conosco.
-            </EmptyResponse>
+            <EmptyResponse.Container className="h-full">
+              <EmptyResponse.Image />
+              <EmptyResponse.Message>
+                Não encontramos nenhuma cidade com este nome, entre em contato conosco.
+              </EmptyResponse.Message>
+            </EmptyResponse.Container>
           ) : null}
           {!isLoading && isError ? (<TryAgain refetch={refetch} className="h-full" />) : null}
         </PopoverContent>
