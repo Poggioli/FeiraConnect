@@ -7,8 +7,8 @@ import { Link } from "@tanstack/react-router";
 import { Search } from "lucide-react";
 import { FC, useCallback, useRef } from "react";
 import { useHomeSearchBar } from "./useHomeSearchBar";
-import { EmptyResponse } from "../EmptyResponse";
-import { TryAgain } from "../TryAgain";
+import { EmptyResponse } from "@/components/EmptyResponse";
+import { TryAgain } from "@/components/TryAgain";
 
 export const HomeSearchBar: FC = () => {
 
