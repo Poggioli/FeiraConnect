@@ -1,15 +1,13 @@
-import { EmptyResponse } from "@/components/EmptyResponse";
-import { StreetMarketCard, StreetMarketCardSkeleton } from "@/components/StreetMarketCard";
-import { StreetMarketsFilter } from "@/components/StreetMarketsFilter";
-import { TryAgain } from "@/components/TryAgain";
 import { FC, useCallback, useRef } from "react";
-import { useStreetMarketsList } from "./useStreetMarketsList";
+import { useExhibitorsList } from "./useExhibitorsList";
+import { EmptyResponse } from "@/components/EmptyResponse";
+import { TryAgain } from "@/components/TryAgain";
 
-export const StreetMarketsList: FC = () => {
+export const ExhibitorsList: FC = () => {
 
   const observer = useRef<IntersectionObserver>();
   const {
-    streetMarketsByCityService: {
+    exhibitorsByStreetMarketService: {
       isLoading,
       hasNextPage,
       isFetching,
@@ -21,10 +19,10 @@ export const StreetMarketsList: FC = () => {
       fetchNextPage,
       refetch
     }
-  } = useStreetMarketsList();
+  } = useExhibitorsList();
 
   const lastElementRef = useCallback(
-    (node: HTMLDivElement) => {
+    (node: HTMLParagraphElement) => {
       if (isLoading) {
         return;
       }
@@ -50,14 +48,13 @@ export const StreetMarketsList: FC = () => {
     <>
       {isSuccess || isFetching ? (
         <>
-          <StreetMarketsFilter />
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 z-0">
             {isSuccess && isFilled && !isLoading ? (
-              dataItems.map((item) => <StreetMarketCard key={item.id} ref={lastElementRef} {...item} />)
+              dataItems.map((item) => <p key={item.id} ref={lastElementRef}>{item.name}</p>)
             ) : null}
-            {isFetching || isLoading ? (
+            {/* {isFetching || isLoading ? (
               Array.from(Array(10).keys()).map((i) => <StreetMarketCardSkeleton key={i} />)
-            ) : null}
+            ) : null} */}
           </div>
         </>
       ) : null}
