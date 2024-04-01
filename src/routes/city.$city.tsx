@@ -8,9 +8,10 @@ export const Route = createFileRoute("/city/$city")({
   component: City,
   notFoundComponent: () => <PageNotFound />,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  validateSearch: (search: Record<string, any>): { wd?: Weekday, open?: boolean } => ({
+  validateSearch: (search: Record<string, any>): { wd?: Weekday, open?: boolean, smq?: string } => ({
     wd: search.wd,
-    open: search.open
+    open: search.open,
+    smq: search.smq
   })
 })
 
