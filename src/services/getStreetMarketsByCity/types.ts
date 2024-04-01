@@ -25,6 +25,7 @@ export type GetStreetMarketsByCityQuery = {
   city: string;
   weekday?: Weekday;
   hour?: number;
+  searchTerm?: string;
 };
 
 export type GetStreetMarketsByCityParams = PaginationRequest &

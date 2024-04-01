@@ -119,7 +119,7 @@ export const StreetMarketsFilter: FC<StreetMarketsFilterProps> = () => {
       {isLoading ? (
         <Skeleton className="h-7 w-full md:w-[50%]" />
       ) : (
-        <Input value={searchStreetMarket} onChange={handleOnSearchStreetMarket} />
+        <Input value={searchStreetMarket} onChange={handleOnSearchStreetMarket} placeholder="Busque uma feira pelo nome" />
       )}
     </>
   );

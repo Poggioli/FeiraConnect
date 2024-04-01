@@ -7,13 +7,13 @@ import { getHours } from "date-fns";
 
 export function useStreetMarketsList() {
   const { city } = useParams({ from: "/city/$city" });
-  const { open, wd } = useSearch({ from: "/city/$city" });
+  const { open, wd, smq } = useSearch({ from: "/city/$city" });
   const currentHour: number | undefined = open
     ? getHours(new Date())
     : undefined;
 
   const { isLoading: isLoadingStreetMarkets, ...streetMarketsByCityService } =
-    useGetStreetMarketsByCity({ city, hour: currentHour, weekday: wd });
+    useGetStreetMarketsByCity({ city, hour: currentHour, weekday: wd, searchTerm: smq });
   const isLoadingCity = useIsFetching({
     queryKey: createGetCityBySlugQueryKey(city),
   });

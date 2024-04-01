@@ -4,11 +4,14 @@ import { useIsFetching } from "@tanstack/react-query";
 import { useNavigate, useParams, useSearch } from "@tanstack/react-router";
 import { format } from "date-fns";
 import { enUS } from "date-fns/locale";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
+import { useDebounce } from "@uidotdev/usehooks";
 
 export function useStreetMarketsFilter() {
   const { city } = useParams({ from: "/city/$city" });
   const { open, wd, smq } = useSearch({ from: "/city/$city" });
+  const [streetMarketQuery, setStreetMarketQuery] = useState(smq || "");
+  const debouncedStreetMarketQuery = useDebounce(streetMarketQuery, 800);
   const navigate = useNavigate();
 
   const isLoadingCity = useIsFetching({
@@ -24,7 +27,7 @@ export function useStreetMarketsFilter() {
   function onNavigate({
     isNowOpen,
     weekDay,
-    streetMarketSearch
+    streetMarketSearch,
   }: {
     isNowOpen?: boolean;
     weekDay?: Weekday;
@@ -35,14 +38,18 @@ export function useStreetMarketsFilter() {
       search: {
         open: isNowOpen,
         wd: weekDay,
-        smq: streetMarketSearch || undefined
-      }
+        smq: streetMarketSearch || undefined,
+      },
     });
   }
 
   function handleOnChangeNowOpen(value: boolean): void {
     if (value) {
-      onNavigate({ isNowOpen: true, weekDay: getWeekday(), streetMarketSearch: smq });
+      onNavigate({
+        isNowOpen: true,
+        weekDay: getWeekday(),
+        streetMarketSearch: smq,
+      });
     } else {
       onNavigate({ streetMarketSearch: smq });
     }
@@ -56,15 +63,25 @@ export function useStreetMarketsFilter() {
     }
   }
 
-  function handleOnSearchStreetMarket(event: ChangeEvent<HTMLInputElement>): void {
+  function handleOnSearchStreetMarket(
+    event: ChangeEvent<HTMLInputElement>
+  ): void {
     const { value } = event.target;
-    onNavigate({ isNowOpen: open, weekDay: wd, streetMarketSearch: value });
+    setStreetMarketQuery(value);
   }
+
+  useEffect(() => {
+    onNavigate({
+      isNowOpen: open,
+      weekDay: wd,
+      streetMarketSearch: debouncedStreetMarketQuery,
+    });
+  }, [debouncedStreetMarketQuery]);
 
   return {
     weekday: wd || "",
     openNow: !!open,
-    searchStreetMarket: smq || "",
+    searchStreetMarket: streetMarketQuery,
     handleOnChangeNowOpen,
     handleOnChangeWeekday,
     handleOnSearchStreetMarket,
