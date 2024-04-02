@@ -24,34 +24,62 @@
       },
       "items": [
         {
-          "id": "550e8400-e29b-41d4-a716-446655440011",
-          "name": "Marta das Flores",
-          "slug": "marta-das-flores"
+          "id": "dbe45e7e-8be7-4a5a-9b6c-f73b6c163a9c",
+          "name": "Barraca da Sofia",
+          "slug": "barraca-da-sofia",
+          "description": "Plantas ornamentais e ervas medicinais!",
+          "whatsApp": "67968883067",
+          "website": "http://www.barracadasofia.com",
+          "phone": "71997897475",
+          "items": ["Cactos", "Hortelã", "Lavanda"]
         },
         {
-          "id": "550e8400-e29b-41d4-a716-446655440012",
-          "name": "José do Pão",
-          "slug": "jose-do-pao"
+          "id": "867f3a2d-78a4-46e8-bdb2-527d476da36e",
+          "name": "Barraca do Miguel",
+          "slug": "barraca-do-miguel",
+          "description": "Melhores queijos e laticínios da região!",
+          "whatsApp": "83989632325",
+          "website": "http://www.barracadomiguel.com",
+          "phone": "99969333769",
+          "items": ["Queijo Gouda", "Manteiga Artesanal", "Iogurte Natural"]
         },
         {
-          "id": "550e8400-e29b-41d4-a716-446655440013",
-          "name": "Carolina dos Queijos",
-          "slug": "carolina-dos-queijos"
+          "id": "f6c22d9c-8d10-4e0f-82fc-29a9c1fd73cb",
+          "name": "Barraca da Lúcia",
+          "slug": "barraca-da-lucia",
+          "description": "Doces caseiros feitos com carinho!",
+          "website": "http://www.barracadalucia.com",
+          "phone": "91980636436",
+          "items": ["Doce de Leite", "Goiabada", "Compota de Abacaxi"]
         },
         {
-          "id": "550e8400-e29b-41d4-a716-446655440014",
-          "name": "Francisco das Azeitonas",
-          "slug": "francisco-das-azeitonas"
+          "id": "ff9bb05d-5e40-4b90-8f89-8e6bfe7fd95d",
+          "name": "Barraca do Marcos",
+          "slug": "barraca-do-marcos",
+          "description": "Delícias da culinária árabe!",
+          "whatsApp": "82974415665",
+          "website": "http://www.barracadomarcos.com",
+          "phone": "61968902173",
+          "items": ["Quibe", "Esfiha", "Baba Ganoush"]
         },
         {
-          "id": "550e8400-e29b-41d4-a716-446655440015",
-          "name": "Beatriz dos Legumes",
-          "slug": "beatriz-dos-legumes"
+          "id": "d9b17b23-bce3-4b51-8378-3d26e0ec07b5",
+          "name": "Barraca da Laura",
+          "slug": "barraca-da-laura",
+          "description": "Plantas e ervas aromáticas para sua horta!",
+          "whatsApp": "92997521008",
+          "website": "http://www.barracadalaura.com",
+          "phone": "63973597394",
+          "items": ["Manjericão Roxo", "Tomilho", "Alecrim"]
         },
         {
-          "id": "550e8400-e29b-41d4-a716-446655440016",
-          "name": "Manuel das Carnes",
-          "slug": "manuel-das-carnes"
+          "id": "c61f8a29-28a0-4628-9fc3-00f2ad2b0635",
+          "name": "Barraca do Lucas",
+          "slug": "barraca-do-lucas",
+          "description": "Melhores frutas e sucos naturais!",
+          "website": "http://www.barracadolucas.com",
+          "phone": "96984554952",
+          "items": ["Suco de Laranja Natural", "Uvas", "Melancias"]
         }
       ]
     },

@@ -24,54 +24,127 @@
       },
       "items": [
         {
-          "id": "550e8400-e29b-41d4-a716-446655440001",
-          "name": "Maria da Fruta",
-          "slug": "maria-da-fruta"
+          "id": "94e39497-0ae4-4b5b-84a2-155b273b4e7a",
+          "name": "Barraca da Maria",
+          "slug": "barraca-da-maria",
+          "description": "Frutas frescas direto do produtor!",
+          "whatsApp": "94968575187",
+          "website": "http://www.barracadamaria.com",
+          "phone": "94988836393",
+          "items": ["Maçãs", "Bananas", "Morangos", "Uvas", "Pêssegos"]
         },
         {
-          "id": "550e8400-e29b-41d4-a716-446655440002",
-          "name": "João do Milho",
-          "slug": "joao-do-milho"
+          "id": "b2893b3d-21e4-497c-b4e7-8f5b3d2104e2",
+          "name": "Barraca do João",
+          "slug": "barraca-do-joao",
+          "description": "Legumes e verduras orgânicas colhidos hoje!",
+          "whatsApp": "67999820521",
+          "phone": "84988188348",
+          "items": [
+            "Tomates",
+            "Cenouras",
+            "Alfaces",
+            "Brócolis",
+            "Rúcula",
+            "Abóboras"
+          ]
         },
         {
-          "id": "550e8400-e29b-41d4-a716-446655440003",
-          "name": "Ana das Verduras",
-          "slug": "ana-das-verduras"
+          "id": "7a8a4b91-3de5-470b-a726-60c3be59f86b",
+          "name": "Barraca do José",
+          "slug": "barraca-do-jose",
+          "description": "Raízes e tubérculos fresquinhos para sua mesa!",
+          "website": "http://www.barracadojose.com",
+          "phone": "28989042423",
+          "items": ["Batatas", "Cenouras", "Mandioca", "Inhame", "Beterrabas"]
         },
         {
-          "id": "550e8400-e29b-41d4-a716-446655440004",
-          "name": "Pedro da Banca",
-          "slug": "pedro-da-banca"
+          "id": "5df06ac8-1e64-46b8-bd9e-440c04a90fd3",
+          "name": "Barraca da Ana",
+          "slug": "barraca-da-ana",
+          "description": "Deliciosos pães e bolos artesanais!",
+          "whatsApp": "(37) 97137-7775",
+          "website": "http://www.barracadaana.com",
+          "phone": "19989746457",
+          "items": [
+            "Pão de Milho",
+            "Broa de Fubá",
+            "Bolo de Laranja",
+            "Rosquinhas",
+            "Croissants"
+          ]
         },
         {
-          "id": "550e8400-e29b-41d4-a716-446655440005",
-          "name": "Rita das Ervas",
-          "slug": "rita-das-ervas"
+          "id": "eab1a6ee-b1ad-4a0f-93d3-1e0f5ab98c3c",
+          "name": "Barraca do Pedro",
+          "slug": "barraca-do-pedro",
+          "description": "Peixes e frutos do mar frescos da costa!",
+          "phone": "89972815093",
+          "items": ["Salmão Fresco", "Lulas", "Camarão", "Atum", "Polvo"]
         },
         {
-          "id": "550e8400-e29b-41d4-a716-446655440006",
-          "name": "Carlos do Pomar",
-          "slug": "carlos-do-pomar"
+          "id": "b5a34b1b-2924-4c4c-ae5c-9a4ab30e41fb",
+          "name": "Barraca da Joana",
+          "slug": "barraca-da-joana",
+          "description": "Ervas e especiarias aromáticas para temperar sua vida!",
+          "whatsApp": "(55) 98095-5374",
+          "website": "http://www.barracajoana.com",
+          "phone": "79989163166",
+          "items": ["Manjericão", "Salsinha", "Alecrim", "Orégano", "Hortelã"]
         },
         {
-          "id": "550e8400-e29b-41d4-a716-446655440007",
-          "name": "Sofia da Horta",
-          "slug": "sofia-da-horta"
+          "id": "73619f77-0f13-4954-bd97-2385f40ef5b8",
+          "name": "Barraca do Francisco",
+          "slug": "barraca-do-francisco",
+          "description": "Ovos frescos de galinhas criadas soltas!",
+          "whatsApp": "(46) 99327-2017",
+          "website": "http://www.barracadochico.com",
+          "phone": "87989057236",
+          "items": ["Ovos Caipiras", "Ovos de Codorna", "Ovos de Pato"]
         },
         {
-          "id": "550e8400-e29b-41d4-a716-446655440008",
-          "name": "Luís do Mercado",
-          "slug": "luis-do-mercado"
+          "id": "bbc62d1d-eb8a-40f6-bbd2-7b674875fbf0",
+          "name": "Barraca da Teresa",
+          "slug": "barraca-da-teresa",
+          "description": "Mel puro e natural direto das colmeias!",
+          "phone": "63984397056",
+          "items": [
+            "Mel de Flor de Laranjeira",
+            "Mel de Eucalipto",
+            "Mel Silvestre",
+            "Mel de Assa-peixe"
+          ]
         },
         {
-          "id": "550e8400-e29b-41d4-a716-446655440009",
-          "name": "Fernanda das Especiarias",
-          "slug": "fernanda-das-especiarias"
+          "id": "15f2791c-22e4-4a2b-b99a-f920b60e4be5",
+          "name": "Barraca do Antônio",
+          "slug": "barraca-do-antonio",
+          "description": "Queijos artesanais de alta qualidade!",
+          "whatsApp": "(19) 98316-8411",
+          "website": "http://www.barracadoantonio.com",
+          "phone": "79979667046",
+          "items": [
+            "Queijo Minas Frescal",
+            "Queijo Prato",
+            "Queijo Coalho",
+            "Queijo Gorgonzola"
+          ]
         },
         {
-          "id": "550e8400-e29b-41d4-a716-446655440010",
-          "name": "António das Frutas Tropicais",
-          "slug": "antonio-das-frutas-tropicais"
+          "id": "26bdaa44-1b25-4c11-9b64-b72a768f4de9",
+          "name": "Barraca da Rita",
+          "slug": "barraca-da-rita",
+          "description": "Deliciosas conservas caseiras!",
+          "whatsApp": "(27) 98962-0297",
+          "website": "http://www.barracadarita.com",
+          "phone": "38986437329",
+          "items": [
+            "Geleia de Morango",
+            "Picles de Pepino",
+            "Compota de Maçã",
+            "Chutney de Manga",
+            "Doce de Abóbora"
+          ]
         }
       ]
     },
