@@ -3,7 +3,7 @@
     "method": "GET",
     "urlPathPattern": "/street-markets/(.+)",
     "headers": {
-      "street-markets/slug": {
+      "Street-Markets-Slug": {
         "equalTo": "error-not-found"
       }
     }

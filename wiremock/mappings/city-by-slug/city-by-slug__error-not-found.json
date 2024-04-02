@@ -3,7 +3,7 @@
     "method": "GET",
     "urlPathPattern": "/cities/(.+)",
     "headers": {
-      "cities/slug": {
+      "Cities-Slug": {
         "equalTo": "error-not-found"
       }
     }

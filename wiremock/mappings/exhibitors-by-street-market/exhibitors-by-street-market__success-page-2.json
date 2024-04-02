@@ -9,6 +9,11 @@
       "perPage": {
         "equalTo": "10"
       }
+    },
+    "headers": {
+      "Slug-Exhibitors": {
+        "absent": true
+      }
     }
   },
   "response": {

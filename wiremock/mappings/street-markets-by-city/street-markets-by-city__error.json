@@ -11,7 +11,7 @@
       }
     },
     "headers": {
-      "slug/street-markets": {
+      "Slug-Street-Markets": {
         "equalTo": "error"
       }
     }
