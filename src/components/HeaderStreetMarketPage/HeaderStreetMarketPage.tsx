@@ -6,6 +6,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { TitlePage } from "@/components/TitlePage";
 import { Badge } from "../ui/badge";
 import { MapPinned } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 export const HeaderStreetMarketPage: FC<HeaderStreetMarketPageProps> = () => {
 
@@ -28,6 +29,9 @@ export const HeaderStreetMarketPage: FC<HeaderStreetMarketPageProps> = () => {
     </>
   ) : (
     <>
+      <Helmet>
+        <title>{data?.name} | Feira connect</title>
+      </Helmet>
       <TitlePage>{data?.name}</TitlePage>
       <a
         href={data?.location}

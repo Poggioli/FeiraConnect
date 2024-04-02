@@ -3,6 +3,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { notFound } from "@tanstack/react-router";
 import { FC } from "react";
 import { useHeaderCityPage } from "./useHeaderCityPage";
+import { Helmet } from "react-helmet";
 
 export const HeaderCityPage: FC = () => {
 
@@ -21,6 +22,11 @@ export const HeaderCityPage: FC = () => {
   return isFetching ? (
     <Skeleton className="min-h-10 w-32" />
   ) : (
-    <TitlePage>{data?.name}</TitlePage>
+    <>
+      <TitlePage>{data?.name}</TitlePage>
+      <Helmet>
+        <title>{data?.name} | Feira connect</title>
+      </Helmet>
+    </>
   );
 };
