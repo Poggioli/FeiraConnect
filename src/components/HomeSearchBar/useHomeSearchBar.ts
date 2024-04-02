@@ -1,4 +1,4 @@
-import { isEnterKey } from "@/lib/utils";
+import { isEnterKey } from "@/lib/keyboardEvents";
 import { useGetCities } from "@/services/getCities";
 import { useNavigate, useSearch } from "@tanstack/react-router";
 import { ChangeEvent, KeyboardEvent, useEffect, useState } from "react";
