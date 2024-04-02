@@ -19,6 +19,7 @@ export type GetStreetMarketsByCity = {
   apperture: number;
   closure: number;
   weekday: Weekday;
+  location: string;
 };
 
 export type GetStreetMarketsByCityQuery = {

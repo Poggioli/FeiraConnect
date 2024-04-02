@@ -13,7 +13,8 @@
       "apperture": 9,
       "closure": 17,
       "weekday": "tuesday",
-      "neighborhood": "Jardim Botânico"
+      "neighborhood": "Jardim Botânico",
+      "location": "https://maps.app.goo.gl/Ti5v1CmmnzexXyZN6"
     },
     "headers": {
       "Content-Type": "application/json"
