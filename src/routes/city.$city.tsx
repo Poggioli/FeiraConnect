@@ -17,7 +17,7 @@ export const Route = createFileRoute("/city/$city")({
 
 function City() {
   return (
-    <div className="p-6 md:p-12 h-full w-full flex flex-col gap-4 justify-start items-start max-w-screen-lg m-auto">
+    <div className="p-6 md:p-12 min-h-full w-full flex flex-col gap-4 justify-start items-start max-w-screen-lg m-auto">
       <HeaderCityPage />
       <StreetMarketsList />
     </div>

@@ -6,6 +6,11 @@ export type GetExhibitorsByStreetMarket = {
   id: string;
   name: string;
   slug: string;
+  description?: string;
+  whatsApp?: string;
+  website?: string;
+  phone: string;
+  items: string[];
 };
 
 export type GetExhibitorsByStreetMarketQuery = {

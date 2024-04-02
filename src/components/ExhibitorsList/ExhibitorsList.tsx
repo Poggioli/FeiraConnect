@@ -2,6 +2,7 @@ import { FC, useCallback, useRef } from "react";
 import { useExhibitorsList } from "./useExhibitorsList";
 import { EmptyResponse } from "@/components/EmptyResponse";
 import { TryAgain } from "@/components/TryAgain";
+import { ExhibitorCard, ExhibitorCardSkeleton } from "@/components/ExhibitorCard";
 
 export const ExhibitorsList: FC = () => {
 
@@ -22,7 +23,7 @@ export const ExhibitorsList: FC = () => {
   } = useExhibitorsList();
 
   const lastElementRef = useCallback(
-    (node: HTMLParagraphElement) => {
+    (node: HTMLDivElement) => {
       if (isLoading) {
         return;
       }
@@ -48,13 +49,13 @@ export const ExhibitorsList: FC = () => {
     <>
       {isSuccess || isFetching ? (
         <>
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 z-0">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 z-0 pb-6 md:pb-12">
             {isSuccess && isFilled && !isLoading ? (
-              dataItems.map((item) => <p key={item.id} ref={lastElementRef}>{item.name}</p>)
+              dataItems.map((item) => <ExhibitorCard key={item.id} ref={lastElementRef} {...item} />)
             ) : null}
-            {/* {isFetching || isLoading ? (
-              Array.from(Array(10).keys()).map((i) => <StreetMarketCardSkeleton key={i} />)
-            ) : null} */}
+            {isFetching || isLoading ? (
+              Array.from(Array(10).keys()).map((i) => <ExhibitorCardSkeleton key={i} />)
+            ) : null}
           </div>
         </>
       ) : null}
