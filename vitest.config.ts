@@ -6,7 +6,9 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
+      setupFiles: ["./__tests__/setup.ts"],
       globals: true,
+      environment: "jsdom",
       coverage: {
         exclude: [
           "src/components/ui/**/*",
@@ -18,7 +20,8 @@ export default mergeConfig(
           "plopfile.js",
           "postcss.config.js",
           "tailwind.config.js",
-          "src/services/api.ts"
+          "src/services/api.ts",
+          "__tests__/**",
         ],
       },
     },
