@@ -1,6 +1,7 @@
 import { Queries, RenderHookOptions, RenderHookResult, queries, renderHook } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { FC, PropsWithChildren } from "react";
+import { FC, PropsWithChildren, useMemo } from "react";
+import { RouterProvider, createRouter } from "@tanstack/react-router";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -10,15 +11,24 @@ const queryClient = new QueryClient({
       retryDelay: 0,
     }
   }
-})
+});
 
-const Wrapper: FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <QueryClientProvider client={queryClient}>
-      {children}
-    </QueryClientProvider>
-  )
+const RouterWrapper: FC<PropsWithChildren> = ({ children }) => {
+  const router = useMemo(() =>
+    createRouter({
+      defaultComponent: () => children,
+    }), [children]);
+
+  return <RouterProvider router={router} />;
 }
+
+const Wrapper: FC<PropsWithChildren> = ({ children }) => (
+  <QueryClientProvider client={queryClient}>
+    <RouterWrapper>
+      {children}
+    </RouterWrapper>
+  </QueryClientProvider>
+);
 
 export function customRenderHook<
   Result,
