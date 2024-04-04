@@ -20,7 +20,7 @@ export function useExhibitorCard({
   const hasWhatsApp = !!whatsApp;
   const wpp = parsePhoneNumber(whatsApp || "", "BR");
   const whatsAppLink = encodeURI(
-    `https://wa.me/${wpp?.countryCallingCode}${wpp?.nationalNumber}?text=Olá ${name}, encontrei seu número através do feira-connect.`
+    `https://wa.me/${wpp?.countryCallingCode}${wpp?.nationalNumber}?text=Olá ${formatedName}, encontrei seu número através do feira-connect.`
   );
   const whatsAppNumber = {
     formatedNumber: `${wpp?.formatNational()}`,
