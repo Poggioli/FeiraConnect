@@ -25,6 +25,7 @@ describe("@/services/getCities", () => {
       expect(result.current.isLoading).toBe(false);
       expect(result.current.isFetching).toBe(false);
       expect(result.current.hasNextPage).toBe(false);
+      expect(result.current.dataItems).toHaveLength(1);
     });
   });
 
@@ -39,6 +40,7 @@ describe("@/services/getCities", () => {
       expect(result.current.isLoading).toBe(false);
       expect(result.current.isFetching).toBe(false);
       expect(result.current.hasNextPage).toBe(true);
+      expect(result.current.dataItems).toHaveLength(10);
     });
   });
 
@@ -55,6 +57,7 @@ describe("@/services/getCities", () => {
       expect(result.current.isFetching).toBe(false);
       expect(result.current.isEmpty).toBe(false);
       expect(result.current.isFilled).toBe(true);
+      expect(result.current.dataItems).toHaveLength(1);
     });
   });
 
@@ -71,6 +74,7 @@ describe("@/services/getCities", () => {
       expect(result.current.isFetching).toBe(false);
       expect(result.current.isFilled).toBe(false);
       expect(result.current.isEmpty).toBe(true);
+      expect(result.current.dataItems).toHaveLength(0);
     });
   });
 });
