@@ -49,4 +49,12 @@ export const getCitiesHandlers = {
       items: [],
     });
   }),
+  error: http.get(/cities/, () => {
+    return HttpResponse.json(
+      {},
+      {
+        status: 500,
+      }
+    );
+  }),
 };
