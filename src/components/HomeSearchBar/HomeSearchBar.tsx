@@ -1,3 +1,5 @@
+import { EmptyResponse } from "@/components/EmptyResponse";
+import { TryAgain } from "@/components/TryAgain";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Popover, PopoverAnchor, PopoverContent } from "@/components/ui/popover";
@@ -7,8 +9,6 @@ import { Link } from "@tanstack/react-router";
 import { Search } from "lucide-react";
 import { FC, useCallback, useRef } from "react";
 import { useHomeSearchBar } from "./useHomeSearchBar";
-import { EmptyResponse } from "@/components/EmptyResponse";
-import { TryAgain } from "@/components/TryAgain";
 
 export const HomeSearchBar: FC = () => {
 
@@ -65,16 +65,16 @@ export const HomeSearchBar: FC = () => {
             onKeyDown={handleOnKeyPress}
           />
         </PopoverAnchor>
-        <PopoverContent className="flex flex-col items-start justify-center gap-2 w-[var(--radix-popper-anchor-width)]">
+        <PopoverContent className="flex flex-col items-start justify-center gap-2 w-[var(--radix-popper-anchor-width)]" aria-busy={isLoading || isFetching ? "true" : undefined}>
           {isLoading ? (
             Array.from(Array(3).keys()).map((item) =>
               <div key={item} className="flex flex-col justify-center h-11">
-                <Skeleton key={item} className="h-6 w-28" />
+                <Skeleton className="h-6 w-28" />
               </div>
             )
           ) : null}
           {!isLoading && isSuccess && isFilled ? (
-            <ScrollArea className="w-full h-[calc(var(--radix-popover-content-available-height)-3rem)] overflow-hidden" >
+            <ScrollArea className="w-full h-[calc(var(--radix-popover-content-available-height)-3rem)] overflow-hidden">
               <div className="flex flex-col p-1">
                 {dataItems.map(({ name, slug, id }) => (
                   <Link
@@ -92,7 +92,7 @@ export const HomeSearchBar: FC = () => {
                 {isFetching ? (
                   Array.from(Array(3).keys()).map((item) =>
                     <div key={item} className="flex flex-col justify-center h-11">
-                      <Skeleton key={item} className="h-6 w-28" />
+                      <Skeleton className="h-6 w-28" />
                     </div>
                   )
                 ) : null}

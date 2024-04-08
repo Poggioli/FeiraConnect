@@ -1,4 +1,4 @@
-import { HttpResponse, http } from "msw";
+import { HttpResponse, http, delay } from "msw";
 
 export const getCitiesHandlers = {
   filledOnePage: http.get(/cities/, () => {
@@ -56,5 +56,25 @@ export const getCitiesHandlers = {
         status: 500,
       }
     );
+  }),
+  filledOnePageWithDelay: http.get(/cities/, async () => {
+    await delay(500);
+
+    return HttpResponse.json({
+      metadata: {
+        currentPage: 1,
+        itemsPerPage: 10,
+        totalPages: 1,
+        totalItems: 1,
+        isLastPage: true,
+      },
+      items: [
+        {
+          id: "222",
+          slug: "slug",
+          name: "Slug",
+        },
+      ],
+    });
   }),
 };
