@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import PeopleLookingAtNothing from '@/assets/people-looking-at-nothing.svg?react';
 import { cn } from "@/lib/utils";
 import { HTMLAttributes, forwardRef } from "react";

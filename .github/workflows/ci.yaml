@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - '*'
+  workflow_dispatch:
+
+name: CI
+
+jobs:
+  ci:
+    name: CI - Build and Test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: yarn
+          registry-url: https://npm.pkg.github.com/
+      - name: Install Dependencies
+        run: yarn install --immutable
+      - name: Lint
+        run: yarn lint
+      - name: Test
+        run: yarn test
+      - name: Build
+        run: yarn build

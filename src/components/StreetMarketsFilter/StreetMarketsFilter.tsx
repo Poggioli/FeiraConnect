@@ -2,12 +2,11 @@ import { Toggle } from "@/components/ui/toggle";
 import { FC } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { StreetMarketsFilterProps } from "./types";
 import { useStreetMarketsFilter } from "./useStreetMarketsFilter";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
 
-export const StreetMarketsFilter: FC<StreetMarketsFilterProps> = () => {
+export const StreetMarketsFilter: FC = () => {
 
   const {
     openNow,

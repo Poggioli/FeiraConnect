@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Queries, RenderHookOptions, RenderHookResult, queries, renderHook } from "@testing-library/react";
 import { FC, PropsWithChildren } from "react";
 import { QueryClientProviderWrapper } from "./QueryClientProviderWrapper";

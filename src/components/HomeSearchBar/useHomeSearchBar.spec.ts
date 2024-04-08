@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { FetchNextPageOptions } from "@tanstack/react-query";
+ import { FetchNextPageOptions } from "@tanstack/react-query";
 import { act } from "@testing-library/react";
 import { customRenderHook } from "@tests/customRenderHook";
 import { ChangeEvent, KeyboardEvent } from "react";

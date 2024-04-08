@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Queries, RenderOptions, RenderResult, queries, render } from "@testing-library/react";
 import React, { FC, PropsWithChildren } from "react";
 import { QueryClientProviderWrapper } from './QueryClientProviderWrapper';

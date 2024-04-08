@@ -76,6 +76,7 @@ export function useStreetMarketsFilter() {
       weekDay: wd,
       streetMarketSearch: debouncedStreetMarketQuery,
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedStreetMarketQuery]);
 
   return {

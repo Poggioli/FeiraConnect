@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { HeaderStreetMarketPageProps } from "./types";
 import { useHeaderStreetMarketPage } from "./useHeaderStreetMarketPage";
 import { notFound } from "@tanstack/react-router";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -8,7 +7,7 @@ import { Badge } from "../ui/badge";
 import { MapPinned } from "lucide-react";
 import { Helmet } from "react-helmet";
 
-export const HeaderStreetMarketPage: FC<HeaderStreetMarketPageProps> = () => {
+export const HeaderStreetMarketPage: FC = () => {
 
   const {
     streetMarketService: {
