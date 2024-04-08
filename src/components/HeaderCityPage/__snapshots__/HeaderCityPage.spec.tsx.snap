@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`@/components/HeaderCityPage > GIVEN a HeaderCityPage
+      WHEN not finish load
+      THEN should show the loading state 1`] = `
+<body>
+  <div />
+</body>
+`;
