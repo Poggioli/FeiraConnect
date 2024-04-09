@@ -1,10 +1,10 @@
-import { Toggle } from "@/components/ui/toggle";
-import { FC } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
-import { useStreetMarketsFilter } from "./useStreetMarketsFilter";
-import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Toggle } from "@/components/ui/toggle";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { FC } from "react";
+import { useStreetMarketsFilter } from "./useStreetMarketsFilter";
 
 export const StreetMarketsFilter: FC = () => {
 
@@ -15,7 +15,8 @@ export const StreetMarketsFilter: FC = () => {
     handleOnChangeWeekday,
     searchStreetMarket,
     handleOnSearchStreetMarket,
-    isLoading
+    isLoading,
+    week
   } = useStreetMarketsFilter();
 
   return (
@@ -46,69 +47,20 @@ export const StreetMarketsFilter: FC = () => {
                 value={weekday}
                 onValueChange={handleOnChangeWeekday}
               >
-                <ToggleGroupItem
-                  className="whitespace-nowrap"
-                  size="xsm"
-                  variant="outline"
-                  value="sunday"
-                  aria-label="Visualizar feiras de domingo"
-                >
-                  Domingo
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  className="whitespace-nowrap"
-                  size="xsm"
-                  variant="outline"
-                  value="monday"
-                  aria-label="Visualizar feiras de segunda-feira"
-                >
-                  Segunda-feira
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  className="whitespace-nowrap"
-                  size="xsm"
-                  variant="outline"
-                  value="tuesday"
-                  aria-label="Visualizar feiras de terça-feira"
-                >
-                  Terça-feira
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  className="whitespace-nowrap"
-                  size="xsm"
-                  variant="outline"
-                  value="wednesday"
-                  aria-label="Visualizar feiras de quarta-feira"
-                >
-                  Quarta-feira
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  className="whitespace-nowrap"
-                  size="xsm"
-                  variant="outline"
-                  value="thursday"
-                  aria-label="Visualizar feiras de quinta-feira"
-                >
-                  Quinta-feira
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  className="whitespace-nowrap"
-                  size="xsm"
-                  variant="outline"
-                  value="friday"
-                  aria-label="Visualizar feiras de sexta-feira"
-                >
-                  Sexta-feira
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  className="whitespace-nowrap"
-                  size="xsm"
-                  variant="outline"
-                  value="saturday"
-                  aria-label="Visualizar feiras de sábado"
-                >
-                  Sábado
-                </ToggleGroupItem>
+                {
+                  week.map((day) => (
+                    <ToggleGroupItem
+                      key={day}
+                      className="whitespace-nowrap"
+                      size="xsm"
+                      variant="outline"
+                      value={day}
+                      aria-label={`Visualizar feiras de ${day}`}
+                    >
+                      {day}
+                    </ToggleGroupItem>
+                  ))
+                }
               </ToggleGroup>
             </>
           )}

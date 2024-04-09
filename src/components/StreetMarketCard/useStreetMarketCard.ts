@@ -1,16 +1,6 @@
 import { capitalizeString } from "@/lib/capitalizeString";
-import { Weekday } from "@/services/getStreetMarketsByCity";
 import { UseStreetMarketCardProps } from "./types";
-
-const weekdaysFormated: Record<Weekday, string> = {
-  saturday: "Sábado",
-  sunday: "Domingo",
-  monday: "Segunda-feira",
-  tuesday: "Terça-feira",
-  wednesday: "Quarta-feira",
-  thursday: "Qinita-feira",
-  friday: "Sexta-feira",
-};
+import { weekdayFormated } from "@/lib/weekdayFormated";
 
 export function useStreetMarketCard({
   apperture,
@@ -26,12 +16,12 @@ export function useStreetMarketCard({
   const formatedName = capitalizeString(name);
   const formatedNeighborhood = capitalizeString(neighborhood);
   const timeFormated = `${formatHour(apperture)}h - ${formatHour(closure)}h`;
-  const weekdayFormated = weekdaysFormated[weekday];
+  const wf = weekdayFormated(weekday);
 
   return {
     formatedName,
     formatedNeighborhood,
     timeFormated,
-    weekdayFormated,
+    weekdayFormated: wf,
   };
 }

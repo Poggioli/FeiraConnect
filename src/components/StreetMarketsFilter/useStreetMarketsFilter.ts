@@ -6,6 +6,7 @@ import { format } from "date-fns";
 import { enUS } from "date-fns/locale";
 import { ChangeEvent, useEffect, useState } from "react";
 import { useDebounce } from "@uidotdev/usehooks";
+import { weekdayFormated } from "@/lib/weekdayFormated";
 
 export function useStreetMarketsFilter() {
   const { city } = useParams({ from: "/city/$city" });
@@ -13,7 +14,15 @@ export function useStreetMarketsFilter() {
   const [streetMarketQuery, setStreetMarketQuery] = useState(smq || "");
   const debouncedStreetMarketQuery = useDebounce(streetMarketQuery, 800);
   const navigate = useNavigate();
-
+  const week = [
+    weekdayFormated("sunday"),
+    weekdayFormated("monday"),
+    weekdayFormated("tuesday"),
+    weekdayFormated("wednesday"),
+    weekdayFormated("thursday"),
+    weekdayFormated("friday"),
+    weekdayFormated("saturday"),
+  ];
   const isLoadingCity = useIsFetching({
     queryKey: createGetCityBySlugQueryKey(city),
   });
@@ -76,7 +85,7 @@ export function useStreetMarketsFilter() {
       weekDay: wd,
       streetMarketSearch: debouncedStreetMarketQuery,
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedStreetMarketQuery]);
 
   return {
@@ -87,5 +96,6 @@ export function useStreetMarketsFilter() {
     handleOnChangeWeekday,
     handleOnSearchStreetMarket,
     isLoading: isLoadingCity,
+    week
   };
 }
