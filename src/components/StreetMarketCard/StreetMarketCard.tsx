@@ -17,6 +17,7 @@ export const StreetMarketCard = forwardRef<
   closure,
   weekday,
   slug,
+  className,
   ...props
 }, ref) => {
   const {
@@ -40,7 +41,7 @@ export const StreetMarketCard = forwardRef<
         streetMarket: slug
       }}
     >
-      <Card {...props} className={cn("py-4 px-5 w-full", props.className)} ref={ref}>
+      <Card {...props} className={cn("py-4 px-5 w-full", className)} ref={ref}>
         <CardTitle>{formatedName}</CardTitle>
         <CardDescription>{formatedNeighborhood}</CardDescription>
         <div className="mt-2 flex flex-row flex-wrap gap-2">
