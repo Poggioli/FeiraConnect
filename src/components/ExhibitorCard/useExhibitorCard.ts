@@ -1,5 +1,6 @@
-import { UseExhibitorCardPropsProps } from "./types";
+import { capitalizeString } from "@/lib/capitalizeString";
 import parsePhoneNumber, { PhoneNumber } from "libphonenumber-js";
+import { UseExhibitorCardPropsProps } from "./types";
 
 export function useExhibitorCard({
   name,
@@ -7,7 +8,7 @@ export function useExhibitorCard({
   whatsApp,
   website,
 }: UseExhibitorCardPropsProps) {
-  const formatedName = name.charAt(0).toUpperCase() + name.slice(1);
+  const formatedName = capitalizeString(name);
   const hasWebsite = !!website;
 
   const phoneNumber = parsePhoneNumber(phone, "BR") as PhoneNumber;

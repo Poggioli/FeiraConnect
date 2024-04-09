@@ -1,3 +1,4 @@
+import { capitalizeString } from "@/lib/capitalizeString";
 import { Weekday } from "@/services/getStreetMarketsByCity";
 import { UseStreetMarketCardProps } from "./types";
 
@@ -22,13 +23,9 @@ export function useStreetMarketCard({
     return String(hour).padStart(2, "0");
   }
 
-  const formatedName = name.charAt(0).toUpperCase() + name.slice(1);
-
-  const formatedNeighborhood =
-    neighborhood.charAt(0).toUpperCase() + neighborhood.slice(1);
-
+  const formatedName = capitalizeString(name);
+  const formatedNeighborhood = capitalizeString(neighborhood);
   const timeFormated = `${formatHour(apperture)}h - ${formatHour(closure)}h`;
-
   const weekdayFormated = weekdaysFormated[weekday];
 
   return {
