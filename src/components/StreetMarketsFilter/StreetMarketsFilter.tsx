@@ -21,7 +21,7 @@ export const StreetMarketsFilter: FC = () => {
 
   return (
     <>
-      <ScrollArea className="w-full whitespace-nowrap">
+      <ScrollArea className="w-full whitespace-nowrap" aria-busy={isLoading ? "true" : undefined}>
         <div className="flex flex-row gap-4 items-center">
           {isLoading ? (
             <>
@@ -48,16 +48,16 @@ export const StreetMarketsFilter: FC = () => {
                 onValueChange={handleOnChangeWeekday}
               >
                 {
-                  week.map((day) => (
+                  week.map(({ label, value }) => (
                     <ToggleGroupItem
-                      key={day}
+                      key={value}
                       className="whitespace-nowrap"
                       size="xsm"
                       variant="outline"
-                      value={day}
-                      aria-label={`Visualizar feiras de ${day}`}
+                      value={value}
+                      aria-label={`Visualizar feiras de ${label}`}
                     >
-                      {day}
+                      {label}
                     </ToggleGroupItem>
                   ))
                 }

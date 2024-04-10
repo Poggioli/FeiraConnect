@@ -11,17 +11,38 @@ import { weekdayFormated } from "@/lib/weekdayFormated";
 export function useStreetMarketsFilter() {
   const { city } = useParams({ from: "/city/$city" });
   const { open, wd, smq } = useSearch({ from: "/city/$city" });
+  const navigate = useNavigate();
   const [streetMarketQuery, setStreetMarketQuery] = useState(smq || "");
   const debouncedStreetMarketQuery = useDebounce(streetMarketQuery, 800);
-  const navigate = useNavigate();
   const week = [
-    weekdayFormated("sunday"),
-    weekdayFormated("monday"),
-    weekdayFormated("tuesday"),
-    weekdayFormated("wednesday"),
-    weekdayFormated("thursday"),
-    weekdayFormated("friday"),
-    weekdayFormated("saturday"),
+    {
+      value: "sunday",
+      label: weekdayFormated("sunday"),
+    },
+    {
+      value: "monday",
+      label: weekdayFormated("monday"),
+    },
+    {
+      value: "tuesday",
+      label: weekdayFormated("tuesday"),
+    },
+    {
+      value: "wednesday",
+      label: weekdayFormated("wednesday"),
+    },
+    {
+      value: "thursday",
+      label: weekdayFormated("thursday"),
+    },
+    {
+      value: "friday",
+      label: weekdayFormated("friday"),
+    },
+    {
+      value: "saturday",
+      label: weekdayFormated("saturday"),
+    },
   ];
   const isLoadingCity = useIsFetching({
     queryKey: createGetCityBySlugQueryKey(city),
@@ -89,13 +110,13 @@ export function useStreetMarketsFilter() {
   }, [debouncedStreetMarketQuery]);
 
   return {
-    weekday: wd || "",
+    weekday: open ? getWeekday() : wd || "",
     openNow: !!open,
     searchStreetMarket: streetMarketQuery,
     handleOnChangeNowOpen,
     handleOnChangeWeekday,
     handleOnSearchStreetMarket,
-    isLoading: isLoadingCity,
-    week
+    isLoading: !!isLoadingCity,
+    week,
   };
 }
