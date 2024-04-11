@@ -12,6 +12,7 @@ export default mergeConfig(
       coverage: {
         exclude: [
           "src/components/ui/**/*",
+          "src/routes/**/*",
           "src/**/index.ts",
           "src/main.tsx",
           "src/lib/utils.ts",

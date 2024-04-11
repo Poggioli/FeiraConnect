@@ -1,7 +1,33 @@
-import { HttpResponse, http } from "msw";
+import { HttpResponse, delay, http } from "msw";
 
 export const getStreetMarketsByCityHandlers = {
   filledOnePage: http.get(/^.+\/street-markets/, () => {
+    return HttpResponse.json({
+      metadata: {
+        currentPage: 1,
+        itemsPerPage: 10,
+        totalPages: 1,
+        totalItems: 1,
+        isLastPage: true,
+      },
+      items: [
+        {
+          id: 'id',
+          name: 'name 1',
+          slug: 'name-1',
+          neighborhood: 'Centro',
+          apperture: 17,
+          closure: 21,
+          weekday: 'monday',
+          location: 'https://maps.app.goo.gl/MNs44SnyPPXMfHGW6'
+        },
+      ],
+    });
+  }),
+  filledOnePageWithDelay: http.get(/^.+\/street-markets/, async () => {
+
+    await delay(1000);
+
     return HttpResponse.json({
       metadata: {
         currentPage: 1,
@@ -38,7 +64,7 @@ export const getStreetMarketsByCityHandlers = {
           id: item,
           name: `name ${item}`,
           slug: `name-${item}`,
-          neighborhood: item,
+          neighborhood: `neighborhood ${item}`,
           apperture: 17,
           closure: 21,
           weekday: 'monday',
@@ -58,5 +84,13 @@ export const getStreetMarketsByCityHandlers = {
       },
       items: [],
     });
+  }),
+  error: http.get(/^.+\/street-markets/, () => {
+    return HttpResponse.json(
+      {},
+      {
+        status: 500,
+      }
+    );
   }),
 };
